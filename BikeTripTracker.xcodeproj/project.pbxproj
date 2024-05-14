@@ -58,16 +58,32 @@
 		45F4E16D2BF3D4DE0091DBF3 /* BikeTripTracker */ = {
 			isa = PBXGroup;
 			children = (
+				45F4E1862BF3D58C0091DBF3 /* Resources */,
 				45F4E16E2BF3D4DE0091DBF3 /* AppDelegate.swift */,
 				45F4E1702BF3D4DE0091DBF3 /* SceneDelegate.swift */,
 				45F4E1722BF3D4DE0091DBF3 /* ViewController.swift */,
-				45F4E1742BF3D4DE0091DBF3 /* Main.storyboard */,
-				45F4E17A2BF3D4E00091DBF3 /* Assets.xcassets */,
-				45F4E17C2BF3D4E00091DBF3 /* LaunchScreen.storyboard */,
-				45F4E17F2BF3D4E00091DBF3 /* Info.plist */,
-				45F4E1772BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld */,
 			);
 			path = BikeTripTracker;
+			sourceTree = "<group>";
+		};
+		45F4E1862BF3D58C0091DBF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45F4E17A2BF3D4E00091DBF3 /* Assets.xcassets */,
+				45F4E17F2BF3D4E00091DBF3 /* Info.plist */,
+				45F4E1772BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld */,
+				45F4E1872BF3D5930091DBF3 /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45F4E1872BF3D5930091DBF3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				45F4E1742BF3D4DE0091DBF3 /* Main.storyboard */,
+				45F4E17C2BF3D4E00091DBF3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,11 +315,14 @@
 				DEVELOPMENT_TEAM = 8BPKDD8276;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BikeTripTracker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bike Trip Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +330,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.savely.BikeTripTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -327,11 +350,14 @@
 				DEVELOPMENT_TEAM = 8BPKDD8276;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BikeTripTracker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bike Trip Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,9 +365,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.savely.BikeTripTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
