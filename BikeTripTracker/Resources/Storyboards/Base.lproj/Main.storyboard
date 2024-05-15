@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SLp-8O-wHJ">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="SLp-8O-wHJ" customClass="MainViewController" customModule="BikeTripTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hu2-iO-r9d">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6zE-oT-ne4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -30,11 +30,11 @@
             <objects>
                 <viewController storyboardIdentifier="MapVC" id="BYZ-38-t0r" customClass="MapViewController" customModule="BikeTripTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" showsScale="YES" pitchButtonVisibility="adaptive" translatesAutoresizingMaskIntoConstraints="NO" id="crm-yt-Leg">
-                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -60,23 +60,52 @@
             <objects>
                 <viewController storyboardIdentifier="DetailsVC" id="SYR-DR-g7H" customClass="DetailsViewController" customModule="BikeTripTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Fh-hK-nf3">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbA-S8-MRB">
-                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgi-gk-wqz" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZJj-ul-GVN">
+                                                <rect key="frame" x="16" y="16" width="382" height="44"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RZ3-Kk-uVx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoO-5W-eIa">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="gray" image="play.fill" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="startButtonTapped:" destination="SYR-DR-g7H" eventType="touchUpInside" id="z6W-bP-ioD"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiW-6y-ZD5">
+                                                                <rect key="frame" x="195" y="0.0" width="187" height="44"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="gray" image="stop.fill" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="stopButtonTapped:" destination="SYR-DR-g7H" eventType="touchUpInside" id="F02-sw-piS"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="44V-Ib-77f"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ZJj-ul-GVN" secondAttribute="trailing" constant="16" id="4JN-RH-eCR"/>
+                                            <constraint firstItem="ZJj-ul-GVN" firstAttribute="top" secondItem="lgi-gk-wqz" secondAttribute="top" constant="16" id="KHd-VA-7KV"/>
                                             <constraint firstAttribute="height" constant="1200" id="Ycp-eO-sCh"/>
+                                            <constraint firstItem="ZJj-ul-GVN" firstAttribute="leading" secondItem="lgi-gk-wqz" secondAttribute="leading" constant="16" id="iU8-6U-d05"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="25"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -88,10 +117,10 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieR-8j-kDI">
-                                <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmN-cu-VFo">
-                                        <rect key="frame" x="197.66666666666666" y="8" width="35" height="5"/>
+                                        <rect key="frame" x="189.66666666666666" y="8" width="35" height="5"/>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="CAL-YF-1GT"/>
@@ -104,23 +133,23 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstItem="OmN-cu-VFo" firstAttribute="centerX" secondItem="ieR-8j-kDI" secondAttribute="centerX" id="HDm-Jt-B0t"/>
-                                    <constraint firstItem="OmN-cu-VFo" firstAttribute="top" secondItem="ieR-8j-kDI" secondAttribute="top" constant="8" id="Lnf-LC-hho"/>
-                                    <constraint firstAttribute="height" constant="44" id="Mnt-VC-xGU"/>
+                                    <constraint firstAttribute="height" constant="44" id="4Wo-yJ-Nyr"/>
+                                    <constraint firstItem="OmN-cu-VFo" firstAttribute="top" secondItem="ieR-8j-kDI" secondAttribute="top" constant="8" id="dqe-b9-xnw"/>
+                                    <constraint firstItem="OmN-cu-VFo" firstAttribute="centerX" secondItem="ieR-8j-kDI" secondAttribute="centerX" id="lRE-we-QlY"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xy1-fN-NEU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="IbA-S8-MRB" firstAttribute="top" secondItem="8Fh-hK-nf3" secondAttribute="top" id="4VI-n0-JEt"/>
+                            <constraint firstItem="IbA-S8-MRB" firstAttribute="top" secondItem="8Fh-hK-nf3" secondAttribute="top" constant="44" id="4VI-n0-JEt"/>
+                            <constraint firstItem="ieR-8j-kDI" firstAttribute="top" secondItem="8Fh-hK-nf3" secondAttribute="top" id="DIP-ut-TrR"/>
                             <constraint firstItem="IbA-S8-MRB" firstAttribute="leading" secondItem="xy1-fN-NEU" secondAttribute="leading" id="K5K-pz-Bqq"/>
-                            <constraint firstItem="ieR-8j-kDI" firstAttribute="leading" secondItem="xy1-fN-NEU" secondAttribute="leading" id="PgD-u5-iDL"/>
-                            <constraint firstItem="ieR-8j-kDI" firstAttribute="top" secondItem="xy1-fN-NEU" secondAttribute="top" id="PuK-a6-b8U"/>
-                            <constraint firstItem="ieR-8j-kDI" firstAttribute="trailing" secondItem="xy1-fN-NEU" secondAttribute="trailing" id="T8J-aZ-bZd"/>
+                            <constraint firstItem="ieR-8j-kDI" firstAttribute="trailing" secondItem="xy1-fN-NEU" secondAttribute="trailing" id="Nuz-qL-MGd"/>
                             <constraint firstItem="IbA-S8-MRB" firstAttribute="trailing" secondItem="xy1-fN-NEU" secondAttribute="trailing" id="U4E-7F-AUa"/>
+                            <constraint firstItem="ieR-8j-kDI" firstAttribute="leading" secondItem="xy1-fN-NEU" secondAttribute="leading" id="VVE-nv-QSG"/>
                             <constraint firstAttribute="bottom" secondItem="IbA-S8-MRB" secondAttribute="bottom" id="wSV-Kd-Bli"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -132,6 +161,8 @@
                     <connections>
                         <outlet property="dragView" destination="ieR-8j-kDI" id="nUy-Zd-aoA"/>
                         <outlet property="scrollView" destination="IbA-S8-MRB" id="p9B-Ol-cCr"/>
+                        <outlet property="startButton" destination="XoO-5W-eIa" id="59p-39-Lf0"/>
+                        <outlet property="stopButton" destination="qiW-6y-ZD5" id="Fju-BP-WEX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HYC-XN-pWf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -140,11 +171,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="stop.fill" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
