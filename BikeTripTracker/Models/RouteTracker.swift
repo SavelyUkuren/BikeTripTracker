@@ -12,11 +12,21 @@ import MapKit
 class RouteTracker: NSObject {
     static var shared = RouteTracker()
     
+    var speedMeasureUnit: SpeedMeasureUnit = .kilometersPerHour
+    var speed: CLLocationSpeed {
+        guard let speed = locationManager.location?.speed else { return 0 }
+        guard speed > 0 else { return 0 }
+        let result = speedMeasureUnit == .metersPerSecond ? speed : speed * 3.6
+        if result > maxSpeed { maxSpeed = result }
+        return result
+    }
+    var maxSpeed: CLLocationSpeed = 0
+    
+    weak var delegate: RouteTrackerDelegate?
+    
     private(set) var state: TrackerState = .idle
     private(set) var locationManager = CLLocationManager()
     private(set) var coordinates: [CLLocationCoordinate2D] = []
-    
-    weak var delegate: RouteTrackerDelegate?
     
     private override init() {
         super.init()

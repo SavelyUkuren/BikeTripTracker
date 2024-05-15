@@ -12,16 +12,35 @@ class DetailsViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var dragView: UIView!
+    
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
+    @IBOutlet weak var currenctSpeedTitleLabel: UILabel!
+    @IBOutlet weak var currentSpeedLabel: UILabel!
+    
     private var routeTracker = RouteTracker.shared
+    private var updateTimer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureViewCornerRadius()
+        currentSpeedLabel.text = "0"
         
+        let masureUnitStr = routeTracker.speedMeasureUnit == .metersPerSecond ? "m/s" : "km/h"
+        currenctSpeedTitleLabel.text = "Speed (\(masureUnitStr))"
+        
+        updateTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateInfo), userInfo: nil, repeats: true)
+        updateTimer.fire()
+        
+    }
+    
+    @objc private func updateInfo() {
+        guard routeTracker.state == .tracking else { return }
+        
+        let speedText = Double(round(routeTracker.speed * 10) / 10)
+        currentSpeedLabel.text = String(speedText)
     }
     
     private func configureViewCornerRadius() {
@@ -33,7 +52,6 @@ class DetailsViewController: UIViewController {
     }
 
     // MARK: - Actions
-    
     @IBAction func startButtonTapped(_ sender: Any) {
         switch routeTracker.state {
         case .idle:

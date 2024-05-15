@@ -14,6 +14,11 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     private var routeTracker = RouteTracker.shared
+    private var detailsVC: DetailsViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsViewController
+        return vc
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
