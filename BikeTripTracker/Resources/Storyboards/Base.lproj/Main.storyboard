@@ -1,24 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SLp-8O-wHJ">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
+        <scene sceneID="exw-Vb-S03">
+            <objects>
+                <viewController id="SLp-8O-wHJ" customClass="MainViewController" customModule="BikeTripTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hu2-iO-r9d">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6zE-oT-ne4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xG-b1-2RF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1030" y="-2"/>
+        </scene>
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapVC" id="BYZ-38-t0r" customClass="MapViewController" customModule="BikeTripTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" showsScale="YES" pitchButtonVisibility="adaptive" translatesAutoresizingMaskIntoConstraints="NO" id="crm-yt-Leg">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="crm-yt-Leg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="K74-sU-qPh"/>
+                            <constraint firstAttribute="bottom" secondItem="crm-yt-Leg" secondAttribute="bottom" id="eB5-5c-Mfi"/>
+                            <constraint firstItem="crm-yt-Leg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gdS-XQ-cWo"/>
+                            <constraint firstItem="crm-yt-Leg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sk2-cj-vNP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="crm-yt-Leg" id="FLO-8A-J8t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.13953488372093" y="-2.5751072961373391"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="JTf-4W-mkB">
+            <objects>
+                <viewController storyboardIdentifier="DetailsVC" id="SYR-DR-g7H" customClass="DetailsViewController" customModule="BikeTripTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Fh-hK-nf3">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbA-S8-MRB">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgi-gk-wqz" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="1200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1200" id="Ycp-eO-sCh"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lgi-gk-wqz" secondAttribute="trailing" id="4xX-CR-1Yg"/>
+                                    <constraint firstItem="lgi-gk-wqz" firstAttribute="width" secondItem="IbA-S8-MRB" secondAttribute="width" id="HZH-jy-Boi"/>
+                                    <constraint firstItem="lgi-gk-wqz" firstAttribute="leading" secondItem="IbA-S8-MRB" secondAttribute="leading" id="rm7-Ft-qzJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="lgi-gk-wqz" secondAttribute="bottom" id="wY1-Bt-aLA"/>
+                                    <constraint firstItem="lgi-gk-wqz" firstAttribute="top" secondItem="IbA-S8-MRB" secondAttribute="top" id="yJH-oi-qgW"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieR-8j-kDI">
+                                <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmN-cu-VFo">
+                                        <rect key="frame" x="197.66666666666666" y="8" width="35" height="5"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="CAL-YF-1GT"/>
+                                            <constraint firstAttribute="width" constant="35" id="aww-pS-PqQ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="OmN-cu-VFo" firstAttribute="centerX" secondItem="ieR-8j-kDI" secondAttribute="centerX" id="HDm-Jt-B0t"/>
+                                    <constraint firstItem="OmN-cu-VFo" firstAttribute="top" secondItem="ieR-8j-kDI" secondAttribute="top" constant="8" id="Lnf-LC-hho"/>
+                                    <constraint firstAttribute="height" constant="44" id="Mnt-VC-xGU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xy1-fN-NEU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IbA-S8-MRB" firstAttribute="top" secondItem="8Fh-hK-nf3" secondAttribute="top" id="4VI-n0-JEt"/>
+                            <constraint firstItem="IbA-S8-MRB" firstAttribute="leading" secondItem="xy1-fN-NEU" secondAttribute="leading" id="K5K-pz-Bqq"/>
+                            <constraint firstItem="ieR-8j-kDI" firstAttribute="leading" secondItem="xy1-fN-NEU" secondAttribute="leading" id="PgD-u5-iDL"/>
+                            <constraint firstItem="ieR-8j-kDI" firstAttribute="top" secondItem="xy1-fN-NEU" secondAttribute="top" id="PuK-a6-b8U"/>
+                            <constraint firstItem="ieR-8j-kDI" firstAttribute="trailing" secondItem="xy1-fN-NEU" secondAttribute="trailing" id="T8J-aZ-bZd"/>
+                            <constraint firstItem="IbA-S8-MRB" firstAttribute="trailing" secondItem="xy1-fN-NEU" secondAttribute="trailing" id="U4E-7F-AUa"/>
+                            <constraint firstAttribute="bottom" secondItem="IbA-S8-MRB" secondAttribute="bottom" id="wSV-Kd-Bli"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="dragView" destination="ieR-8j-kDI" id="nUy-Zd-aoA"/>
+                        <outlet property="scrollView" destination="IbA-S8-MRB" id="p9B-Ol-cCr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYC-XN-pWf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066.046511627907" y="-2.5751072961373391"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -1,0 +1,15 @@
+{
+  "originHash" : "3fe3db92495dfbdf3dfbb98d6b3f5e7acc3f1742d01971bc804f8c4e8cdde56e",
+  "pins" : [
+    {
+      "identity" : "overlaycontainer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/applidium/OverlayContainer.git",
+      "state" : {
+        "revision" : "f1c8fc38bb1ad9a810397f1d06f7026a35e0760c",
+        "version" : "3.5.2"
+      }
+    }
+  ],
+  "version" : 3
+}
