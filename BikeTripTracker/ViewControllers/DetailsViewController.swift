@@ -19,6 +19,12 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var currenctSpeedTitleLabel: UILabel!
     @IBOutlet weak var currentSpeedLabel: UILabel!
     
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var distanceTitleLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var travelTimeTitleLabel: UILabel!
+    
     private var routeTracker = RouteTracker.shared
     private var updateTimer: Timer!
     
@@ -29,7 +35,7 @@ class DetailsViewController: UIViewController {
         currentSpeedLabel.text = "0"
         
         let masureUnitStr = routeTracker.speedMeasureUnit == .metersPerSecond ? "m/s" : "km/h"
-        currenctSpeedTitleLabel.text = "Speed (\(masureUnitStr))"
+//        currenctSpeedTitleLabel.text = "Speed (\(masureUnitStr))"
         
         updateTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateInfo), userInfo: nil, repeats: true)
         updateTimer.fire()
@@ -41,6 +47,13 @@ class DetailsViewController: UIViewController {
         
         let speedText = Double(round(routeTracker.speed * 10) / 10)
         currentSpeedLabel.text = String(speedText)
+        
+        let distanceText = Double(round(routeTracker.distance * 10) / 10)
+        distanceLabel.text = String(distanceText)
+        
+        let timeText = convertSecondsToHMS(RouteTracker.shared.timeDuration)
+        timeLabel.text = timeText
+        
     }
     
     private func configureViewCornerRadius() {
@@ -50,7 +63,17 @@ class DetailsViewController: UIViewController {
         dragView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
     }
-
+    
+    /// Converting seconds to Hour:Minute:Sec
+    private func convertSecondsToHMS(_ seconds: Int) -> String {
+        let hours = seconds / 3600
+        let minutes = (seconds % 3600) / 60
+        let seconds = seconds % 60
+        
+        let formattedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        return formattedTime
+    }
+    
     // MARK: - Actions
     @IBAction func startButtonTapped(_ sender: Any) {
         switch routeTracker.state {

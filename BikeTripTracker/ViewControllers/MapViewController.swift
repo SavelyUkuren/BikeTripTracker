@@ -29,7 +29,7 @@ class MapViewController: UIViewController {
         
         if let userCoordinate = routeTracker.locationManager.location?.coordinate {
             mapView.setCenter(userCoordinate, animated: true)
-            mapView.setRegion(MKCoordinateRegion(center: userCoordinate, latitudinalMeters: 400, longitudinalMeters: 400), animated: true)
+            mapView.setRegion(MKCoordinateRegion(center: userCoordinate, latitudinalMeters: 100, longitudinalMeters: 100), animated: true)
         }
         
     }

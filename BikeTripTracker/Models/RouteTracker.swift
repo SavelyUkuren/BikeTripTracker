@@ -22,11 +22,20 @@ class RouteTracker: NSObject {
     }
     var maxSpeed: CLLocationSpeed = 0
     
+    var distance: Double = 0
+    
+    var timeDuration: Int = 0
+    var startTime: Date? = nil
+    var timer: Timer?
+    var timerIsRunning = false
+    
     weak var delegate: RouteTrackerDelegate?
     
     private(set) var state: TrackerState = .idle
     private(set) var locationManager = CLLocationManager()
     private(set) var coordinates: [CLLocationCoordinate2D] = []
+    
+    private var trackingTimer: Timer!
     
     private override init() {
         super.init()
@@ -36,12 +45,20 @@ class RouteTracker: NSObject {
         locationManager.requestAlwaysAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true
         
-        
     }
     
     func start() {
         state = .tracking
         coordinates = [locationManager.location!.coordinate]
+        distance = 0
+        timeDuration = 0
+        startTime = Date()
+        
+        if !timerIsRunning {
+            timerIsRunning = true
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimeDuration), userInfo: nil, repeats: true)
+            timer?.fire()
+        }
         
         locationManager.startUpdatingLocation()
         
@@ -52,12 +69,17 @@ class RouteTracker: NSObject {
         state = .tracking
         locationManager.startUpdatingLocation()
         
+        timerIsRunning = true
+        startTime = Date().addingTimeInterval(-Double(timeDuration))
+        
         delegate?.didResume()
     }
     
     func pause() {
         state = .pause
         locationManager.stopUpdatingLocation()
+        
+        timerIsRunning = false
         
         delegate?.didPause()
     }
@@ -66,7 +88,28 @@ class RouteTracker: NSObject {
         state = .idle
         locationManager.stopUpdatingLocation()
         
+        timerIsRunning = false
+        timer?.invalidate()
+        timer = nil
+        
         delegate?.didStop()
+    }
+    
+    private func calculateDistance() {
+        let count = coordinates.count
+        guard count > 1 else { return }
+        
+        let l1 = CLLocation(latitude: coordinates[count - 2].latitude, longitude: coordinates[count - 2].longitude)
+        let l2 = CLLocation(latitude: coordinates[count - 1].latitude, longitude: coordinates[count - 1].longitude)
+        
+        distance += l2.distance(from: l1)
+    }
+    
+    @objc private func updateTimeDuration() {
+        guard timerIsRunning else { return }
+        guard let startTime = startTime else { return }
+        
+        timeDuration = Int(Date().timeIntervalSince(startTime))
     }
     
 }
@@ -80,6 +123,8 @@ extension RouteTracker: CLLocationManagerDelegate {
         if let newCoordinate = locations.first?.coordinate {
             coordinates.append(newCoordinate)
         }
+        
+        calculateDistance()
         
         delegate?.locationUpdate(coordinates)
     }
