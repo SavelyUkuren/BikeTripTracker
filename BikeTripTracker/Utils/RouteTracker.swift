@@ -38,6 +38,8 @@ class RouteTracker: NSObject {
     private var timer: Timer?
     private var timerIsRunning = false
     
+    private let coreDataManager = CoreDataManager()
+    
     private override init() {
         super.init()
         
@@ -98,6 +100,8 @@ class RouteTracker: NSObject {
         timer = nil
         
         delegate?.didStop()
+        
+        saveRoute()
     }
     
     private func calculateDistance() {
@@ -108,6 +112,16 @@ class RouteTracker: NSObject {
         let l2 = CLLocation(latitude: locations[count - 1].latitude, longitude: locations[count - 1].longitude)
         
         distance += l2.distance(from: l1) / 1000
+    }
+    
+    private func saveRoute() {
+        let route = RouteModel(id: UUID(), date: Date(),
+                               travelTime: timeDuration,
+                               distance: distance,
+                               maxSpeed: maxSpeed,
+                               avgSpeed: avgSpeed, locations: locations)
+        
+        coreDataManager.saveRoute(route)
     }
     
     @objc private func updateTimeDuration() {

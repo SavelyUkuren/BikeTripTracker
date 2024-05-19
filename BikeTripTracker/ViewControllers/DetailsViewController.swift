@@ -99,4 +99,12 @@ class DetailsViewController: UIViewController {
         routeTracker.stop()
         startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
     }
+    
+    @IBAction func routesButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let routesVC = storyboard.instantiateViewController(withIdentifier: "routesVC") as? RoutesViewController {
+            present(routesVC, animated: true)
+        }
+    }
+    
 }

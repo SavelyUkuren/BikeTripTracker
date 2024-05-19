@@ -17,6 +17,7 @@ extension RouteEntity {
     }
 
     @NSManaged public var id: UUID?
+    @NSManaged public var date: Date?
     @NSManaged public var travelTime: Int64
     @NSManaged public var distance: Double
     @NSManaged public var avgSpeed: Double
