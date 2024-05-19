@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 protocol RouteTrackerDelegate: AnyObject {
-    func locationUpdate(_ coordinates: [CLLocationCoordinate2D])
+    func locationUpdate(_ locations: [LocationModel])
 }
 
 extension RouteTrackerDelegate {

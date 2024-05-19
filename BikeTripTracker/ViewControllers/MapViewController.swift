@@ -33,35 +33,66 @@ class MapViewController: UIViewController {
         }
         
     }
-
+    
+    private func colorBySpeed(_ speed: Double) -> UIColor {
+        var color = UIColor.systemGreen
+        // km/h
+        if speed > 0 && speed < 10 {
+            color = .systemBlue
+        } else if speed > 10 && speed < 30 {
+            color = .systemGreen
+        } else if speed > 30 && speed < 45 {
+            color = .systemOrange
+        } else {
+            color = .systemRed
+        }
+        
+        return color
+    }
+    
 }
 
 extension MapViewController: RouteTrackerDelegate {
     
-    func locationUpdate(_ coordinates: [CLLocationCoordinate2D]) {
-        if let oldOverlay = mapView.overlays.first {
-            mapView.removeOverlay(oldOverlay)
+    func locationUpdate(_ locations: [LocationModel]) {
+        
+        if locations.count > 2 {
+            let c = locations.count - 1
+            
+            let start = CLLocationCoordinate2D(latitude: locations[c - 1].latitude, longitude: locations[c - 1].longitude)
+            let end = CLLocationCoordinate2D(latitude: locations[c].latitude, longitude: locations[c].longitude)
+            
+            var color = UIColor.systemGreen
+            if let speed = locations[c].speed {
+                color = colorBySpeed(speed)
+            }
+            
+            let coords = [start, end]
+            let polyline = RoutePolyline(coordinates: coords, count: coords.count)
+            polyline.color = color
+            mapView.addOverlay(polyline)
         }
         
-        let polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
-        mapView.addOverlay(polyline)
     }
     
     func didStart() {
-        if let oldOverlay = mapView.overlays.first {
-            mapView.removeOverlay(oldOverlay)
+        mapView.overlays.forEach {
+            mapView.removeOverlay($0)
         }
     }
-    
     
 }
 
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: any MKOverlay) -> MKOverlayRenderer {
+        guard let routeOverlay = overlay as? RoutePolyline else {
+            return MKPolygonRenderer(overlay: overlay)
+        }
+        
         let render = MKPolylineRenderer(overlay: overlay)
         
-        render.strokeColor = .systemBlue
+        render.strokeColor = routeOverlay.color
         render.lineWidth = 5
         
         return render

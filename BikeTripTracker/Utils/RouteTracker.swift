@@ -32,7 +32,7 @@ class RouteTracker: NSObject {
     
     private(set) var state: TrackerState = .idle
     private(set) var locationManager = CLLocationManager()
-    private(set) var coordinates: [CLLocationCoordinate2D] = []
+    private(set) var locations: [LocationModel] = []
     
     private var startTime: Date? = nil
     private var timer: Timer?
@@ -50,9 +50,13 @@ class RouteTracker: NSObject {
     
     func start() {
         state = .tracking
-        coordinates = [locationManager.location!.coordinate]
         distance = 0
         timeDuration = 0
+        
+        let startCoordinate = locationManager.location!.coordinate
+        locations = [LocationModel(latitude: startCoordinate.latitude,
+                                   longtitude: startCoordinate.longitude)]
+        
         startTime = Date()
         
         if !timerIsRunning {
@@ -97,11 +101,11 @@ class RouteTracker: NSObject {
     }
     
     private func calculateDistance() {
-        let count = coordinates.count
+        let count = locations.count
         guard count > 1 else { return }
         
-        let l1 = CLLocation(latitude: coordinates[count - 2].latitude, longitude: coordinates[count - 2].longitude)
-        let l2 = CLLocation(latitude: coordinates[count - 1].latitude, longitude: coordinates[count - 1].longitude)
+        let l1 = CLLocation(latitude: locations[count - 2].latitude, longitude: locations[count - 2].longitude)
+        let l2 = CLLocation(latitude: locations[count - 1].latitude, longitude: locations[count - 1].longitude)
         
         distance += l2.distance(from: l1) / 1000
     }
@@ -122,12 +126,14 @@ extension RouteTracker: CLLocationManagerDelegate {
         guard state == .tracking else { return }
         
         if let newCoordinate = locations.first?.coordinate {
-            coordinates.append(newCoordinate)
+            let locModel = LocationModel(latitude: newCoordinate.latitude,
+                                         longtitude: newCoordinate.longitude, speed: speed)
+            self.locations.append(locModel)
         }
         
         calculateDistance()
         
-        delegate?.locationUpdate(coordinates)
+        delegate?.locationUpdate(self.locations)
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -157,3 +163,7 @@ var tempCoordinates: [CLLocationCoordinate2D] = [
     .init(latitude: 56.254365, longitude: 40.553090),
     .init(latitude: 56.254046, longitude: 40.551197)
 ]
+
+var tempLocations: [LocationModel] = tempCoordinates.map {
+    LocationModel(latitude: $0.latitude, longtitude: $0.longitude, speed: Double.random(in: 0...60))
+}
