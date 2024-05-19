@@ -25,6 +25,9 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var travelTimeTitleLabel: UILabel!
     
+    @IBOutlet weak var maxSpeedLabel: UILabel!
+    @IBOutlet weak var avgSpeedLabel: UILabel!
+    
     private var routeTracker = RouteTracker.shared
     private var updateTimer: Timer!
     
@@ -45,14 +48,17 @@ class DetailsViewController: UIViewController {
     @objc private func updateInfo() {
         guard routeTracker.state == .tracking else { return }
         
-        let speedText = Double(round(routeTracker.speed * 10) / 10)
-        currentSpeedLabel.text = String(speedText)
+        currentSpeedLabel.text = String(routeTracker.speed.round(to: 1))
+        distanceLabel.text = String(routeTracker.distance.round(to: 2))
         
-        let distanceText = Double(round(routeTracker.distance * 10) / 10)
-        distanceLabel.text = String(distanceText)
+        let time = convertSecondsToHMS(RouteTracker.shared.timeDuration)
+        timeLabel.text = time
         
-        let timeText = convertSecondsToHMS(RouteTracker.shared.timeDuration)
-        timeLabel.text = timeText
+        let maxSpeed = routeTracker.maxSpeed.round(to: 1)
+        let avgSpeed = routeTracker.avgSpeed.round(to: 1)
+        
+        maxSpeedLabel.text = String(maxSpeed)
+        avgSpeedLabel.text = String(avgSpeed)
         
     }
     

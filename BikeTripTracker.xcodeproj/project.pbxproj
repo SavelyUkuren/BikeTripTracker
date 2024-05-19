@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4529E5232BF4EF4A008B6388 /* RouteTrackerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529E5222BF4EF4A008B6388 /* RouteTrackerDelegate.swift */; };
 		4529E5262BF50565008B6388 /* SpeedMeasureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529E5252BF50565008B6388 /* SpeedMeasureUnit.swift */; };
+		45908B4F2BF9F4250074F361 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45908B4E2BF9F4250074F361 /* Double.swift */; };
 		45944BC72BF3FF6400B8F728 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45944BC22BF3FED900B8F728 /* MapKit.framework */; };
 		45944BCB2BF4020D00B8F728 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45944BCA2BF4020D00B8F728 /* CoreLocation.framework */; };
 		45DA05752BF48922007951E7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA05742BF48922007951E7 /* DetailsViewController.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		4529E5222BF4EF4A008B6388 /* RouteTrackerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrackerDelegate.swift; sourceTree = "<group>"; };
 		4529E5252BF50565008B6388 /* SpeedMeasureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedMeasureUnit.swift; sourceTree = "<group>"; };
+		45908B4E2BF9F4250074F361 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		45944BC22BF3FED900B8F728 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		45944BCA2BF4020D00B8F728 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		45DA05742BF48922007951E7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		45908B4D2BF9F3E50074F361 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45908B4E2BF9F4250074F361 /* Double.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		45944BC12BF3FED800B8F728 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,9 +98,9 @@
 		45DA057B2BF4E393007951E7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				45DA05742BF48922007951E7 /* DetailsViewController.swift */,
 				45DA05792BF489F5007951E7 /* MainViewController.swift */,
 				45F4E1722BF3D4DE0091DBF3 /* MapViewController.swift */,
-				45DA05742BF48922007951E7 /* DetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -126,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				45F4E17F2BF3D4E00091DBF3 /* Info.plist */,
+				45908B4D2BF9F3E50074F361 /* Extensions */,
 				45F4E1862BF3D58C0091DBF3 /* Resources */,
 				45F4E16E2BF3D4DE0091DBF3 /* AppDelegate.swift */,
 				45F4E1702BF3D4DE0091DBF3 /* SceneDelegate.swift */,
@@ -240,6 +251,7 @@
 				45DA057A2BF489F5007951E7 /* MainViewController.swift in Sources */,
 				4529E5232BF4EF4A008B6388 /* RouteTrackerDelegate.swift in Sources */,
 				45F4E1792BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld in Sources */,
+				45908B4F2BF9F4250074F361 /* Double.swift in Sources */,
 				45F4E1712BF3D4DE0091DBF3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

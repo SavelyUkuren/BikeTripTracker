@@ -20,14 +20,13 @@ class RouteTracker: NSObject {
         if result > maxSpeed { maxSpeed = result }
         return result
     }
+    var avgSpeed: Double {
+        let hours = Double(timeDuration) / 3600
+        return distance / hours
+    }
     var maxSpeed: CLLocationSpeed = 0
-    
     var distance: Double = 0
-    
     var timeDuration: Int = 0
-    var startTime: Date? = nil
-    var timer: Timer?
-    var timerIsRunning = false
     
     weak var delegate: RouteTrackerDelegate?
     
@@ -35,7 +34,9 @@ class RouteTracker: NSObject {
     private(set) var locationManager = CLLocationManager()
     private(set) var coordinates: [CLLocationCoordinate2D] = []
     
-    private var trackingTimer: Timer!
+    private var startTime: Date? = nil
+    private var timer: Timer?
+    private var timerIsRunning = false
     
     private override init() {
         super.init()
@@ -102,7 +103,7 @@ class RouteTracker: NSObject {
         let l1 = CLLocation(latitude: coordinates[count - 2].latitude, longitude: coordinates[count - 2].longitude)
         let l2 = CLLocation(latitude: coordinates[count - 1].latitude, longitude: coordinates[count - 1].longitude)
         
-        distance += l2.distance(from: l1)
+        distance += l2.distance(from: l1) / 1000
     }
     
     @objc private func updateTimeDuration() {
@@ -145,6 +146,7 @@ extension RouteTracker: CLLocationManagerDelegate {
     }
 }
 
+// temp data for debug. Can delete
 var tempCoordinates: [CLLocationCoordinate2D] = [
     .init(latitude: 56.253762, longitude: 40.551965),
     .init(latitude: 56.253016, longitude: 40.552228),
