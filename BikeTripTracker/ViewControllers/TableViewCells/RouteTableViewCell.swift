@@ -25,8 +25,12 @@ class RouteTableViewCell: UITableViewCell {
     }
     
     func setRoute(_ route: RouteModel) {
+        let distanceMeasureUnit = RouteTracker.shared.distanceMeasureUnit == .meters ? "m" : "km"
+        
+        let distance = RouteTracker.shared.distanceMeasureUnit == .meters ? route.distance : route.distance / 1000
+        
         dateLabel.text = formatDate(date: route.date)
-        distanceLabel.text = "\(route.distance.round(to: 2)) km"
+        distanceLabel.text = "\(distance.round(to: 2)) \(distanceMeasureUnit)"
     }
     
     func formatDate(date: Date) -> String {

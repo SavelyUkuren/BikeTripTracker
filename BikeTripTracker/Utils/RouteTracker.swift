@@ -12,21 +12,21 @@ import MapKit
 class RouteTracker: NSObject {
     static var shared = RouteTracker()
     
-    var speedMeasureUnit: SpeedMeasureUnit = .kilometersPerHour
     var speed: CLLocationSpeed {
         guard let speed = locationManager.location?.speed else { return 0 }
         guard speed > 0 else { return 0 }
-        let result = speedMeasureUnit == .metersPerSecond ? speed : speed * 3.6
-        if result > maxSpeed { maxSpeed = result }
-        return result
+        if speed > maxSpeed { maxSpeed = speed }
+        return speed
     }
     var avgSpeed: Double {
-        let hours = Double(timeDuration) / 3600
-        return distance / hours
+        return distance / Double(timeDuration)
     }
     var maxSpeed: CLLocationSpeed = 0
     var distance: Double = 0
     var timeDuration: Int = 0
+    
+    var speedMeasureUnit: SpeedMeasureUnit = .kilometersPerHour
+    var distanceMeasureUnit: DistanceMeasureUnit = .kilometers
     
     weak var delegate: RouteTrackerDelegate?
     
@@ -111,7 +111,7 @@ class RouteTracker: NSObject {
         let l1 = CLLocation(latitude: locations[count - 2].latitude, longitude: locations[count - 2].longitude)
         let l2 = CLLocation(latitude: locations[count - 1].latitude, longitude: locations[count - 1].longitude)
         
-        distance += l2.distance(from: l1) / 1000
+        distance += l2.distance(from: l1)
     }
     
     private func saveRoute() {

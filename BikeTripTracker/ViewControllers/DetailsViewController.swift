@@ -31,14 +31,21 @@ class DetailsViewController: UIViewController {
     private var routeTracker = RouteTracker.shared
     private var updateTimer: Timer!
     
+    private var speedMeasureUnitText = ""
+    private var distanceMeasureUnit = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureViewCornerRadius()
-        currentSpeedLabel.text = "0"
         
-        let masureUnitStr = routeTracker.speedMeasureUnit == .metersPerSecond ? "m/s" : "km/h"
-//        currenctSpeedTitleLabel.text = "Speed (\(masureUnitStr))"
+        speedMeasureUnitText = routeTracker.speedMeasureUnit == .metersPerSecond ? "m/s" : "km/h"
+        distanceMeasureUnit = routeTracker.distanceMeasureUnit == .meters ? "m" : "km"
+        
+        currentSpeedLabel.text = "0 \(speedMeasureUnitText)"
+        distanceLabel.text = "0 \(distanceMeasureUnit)"
+        maxSpeedLabel.text = "0 \(speedMeasureUnitText)"
+        avgSpeedLabel.text = "0 \(speedMeasureUnitText)"
         
         updateTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateInfo), userInfo: nil, repeats: true)
         updateTimer.fire()
@@ -48,17 +55,24 @@ class DetailsViewController: UIViewController {
     @objc private func updateInfo() {
         guard routeTracker.state == .tracking else { return }
         
-        currentSpeedLabel.text = String(routeTracker.speed.round(to: 1))
-        distanceLabel.text = String(routeTracker.distance.round(to: 2))
+        speedMeasureUnitText = routeTracker.speedMeasureUnit == .metersPerSecond ? "m/s" : "km/h"
+        distanceMeasureUnit = routeTracker.distanceMeasureUnit == .meters ? "m" : "km"
         
-        let time = convertSecondsToHMS(RouteTracker.shared.timeDuration)
+        // if speed measure unit will be km/s then convert m/s to km/s by multiply on 3.6
+        let speed = routeTracker.speedMeasureUnit == .metersPerSecond ? routeTracker.speed : routeTracker.speed * 3.6
+        let avgSpeed = routeTracker.speedMeasureUnit == .metersPerSecond ? routeTracker.avgSpeed : routeTracker.avgSpeed * 3.6
+        let maxSpeed = routeTracker.speedMeasureUnit == .metersPerSecond ? routeTracker.maxSpeed : routeTracker.maxSpeed * 3.6
+        
+        let distance = routeTracker.distanceMeasureUnit == .meters ? routeTracker.distance : routeTracker.distance / 1000
+        
+        currentSpeedLabel.text = String(speed.round(to: 1)) + " " + speedMeasureUnitText
+        distanceLabel.text = String(distance.round(to: 2)) + " " + distanceMeasureUnit
+        
+        let time = formatTime(seconds: RouteTracker.shared.timeDuration)
         timeLabel.text = time
         
-        let maxSpeed = routeTracker.maxSpeed.round(to: 1)
-        let avgSpeed = routeTracker.avgSpeed.round(to: 1)
-        
-        maxSpeedLabel.text = String(maxSpeed)
-        avgSpeedLabel.text = String(avgSpeed)
+        maxSpeedLabel.text = String(maxSpeed.round(to: 1)) + " " + speedMeasureUnitText
+        avgSpeedLabel.text = String(avgSpeed.round(to: 1)) + " " + speedMeasureUnitText
         
     }
     
@@ -68,16 +82,6 @@ class DetailsViewController: UIViewController {
         dragView.layer.cornerRadius = 25
         dragView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
-    }
-    
-    /// Converting seconds to Hour:Minute:Sec
-    private func convertSecondsToHMS(_ seconds: Int) -> String {
-        let hours = seconds / 3600
-        let minutes = (seconds % 3600) / 60
-        let seconds = seconds % 60
-        
-        let formattedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-        return formattedTime
     }
     
     // MARK: - Actions

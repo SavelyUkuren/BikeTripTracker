@@ -10,7 +10,7 @@ import CoreData
 
 class CoreDataManager {
     
-    private var viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.newBackgroundContext()
+    private var viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     func saveRoute(_ route: RouteModel) {
         guard let context = viewContext else {

@@ -19,6 +19,8 @@ class RouteDetailViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    private var routeTracker = RouteTracker.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,10 +35,18 @@ class RouteDetailViewController: UIViewController {
             return
         }
         
-        distanceLabel.text = String(route.distance.round(to: 2)) + " km"
-        averageSpeedLabel.text = String(route.avgSpeed.round(to: 1)) + " km/h"
+        let speedMeasureUnitText = routeTracker.speedMeasureUnit == .metersPerSecond ? "m/s" : "km/h"
+        let distanceMeasureUnit = routeTracker.distanceMeasureUnit == .meters ? "m" : "km"
+        
+        let avgSpeed = routeTracker.speedMeasureUnit == .metersPerSecond ? route.avgSpeed : route.avgSpeed * 3.6
+        let maxSpeed = routeTracker.speedMeasureUnit == .metersPerSecond ? route.maxSpeed : route.maxSpeed * 3.6
+        
+        let distance = routeTracker.distanceMeasureUnit == .meters ? route.distance : route.distance / 1000
+        
+        distanceLabel.text = String(distance.round(to: 2)) + " " + distanceMeasureUnit
+        averageSpeedLabel.text = String(avgSpeed.round(to: 1)) + " " + speedMeasureUnitText
         timeLabel.text = formatTime(seconds: route.travelTime)
-        maxSpeedLabel.text = String(route.maxSpeed.round(to: 1)) + " km/h"
+        maxSpeedLabel.text = String(maxSpeed.round(to: 1)) + " " + speedMeasureUnitText
         
     }
     
@@ -64,20 +74,6 @@ class RouteDetailViewController: UIViewController {
             let polyline = RoutePolyline(coordinates: coords, count: coords.count)
             polyline.color = color
             mapView.addOverlay(polyline)
-        }
-    }
-    
-    private func formatTime(seconds: Int) -> String {
-        let hours = seconds / 3600
-        let minutes = (seconds % 3600) / 60
-        let remainingSeconds = seconds % 60
-
-        if hours > 0 {
-            return "\(hours)h \(minutes)m \(remainingSeconds)s"
-        } else if minutes > 0 {
-            return "\(minutes)m \(remainingSeconds)s"
-        } else {
-            return "\(remainingSeconds)s"
         }
     }
 }

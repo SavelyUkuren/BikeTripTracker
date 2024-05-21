@@ -12,6 +12,7 @@
 		457156782BFA895C00BCBF8B /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457156772BFA895C00BCBF8B /* RouteTableViewCell.swift */; };
 		4571567A2BFB32D500BCBF8B /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457156792BFB32D500BCBF8B /* RouteDetailViewController.swift */; };
 		4571567C2BFB8F9200BCBF8B /* HelpfulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4571567B2BFB8F9200BCBF8B /* HelpfulFunctions.swift */; };
+		4571567E2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4571567D2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift */; };
 		45908B4F2BF9F4250074F361 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45908B4E2BF9F4250074F361 /* Double.swift */; };
 		45908B512BF9FBF60074F361 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45908B502BF9FBF60074F361 /* LocationModel.swift */; };
 		45908B542BFA000F0074F361 /* RoutePolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45908B532BFA000F0074F361 /* RoutePolyline.swift */; };
@@ -46,6 +47,7 @@
 		457156772BFA895C00BCBF8B /* RouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		457156792BFB32D500BCBF8B /* RouteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
 		4571567B2BFB8F9200BCBF8B /* HelpfulFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulFunctions.swift; sourceTree = "<group>"; };
+		4571567D2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceMeasureUnit.swift; sourceTree = "<group>"; };
 		45908B4E2BF9F4250074F361 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		45908B502BF9FBF60074F361 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		45908B532BFA000F0074F361 /* RoutePolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePolyline.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				45DA05812BF4E448007951E7 /* TrackerState.swift */,
 				4529E5252BF50565008B6388 /* SpeedMeasureUnit.swift */,
+				4571567D2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				45F4E1732BF3D4DE0091DBF3 /* MapViewController.swift in Sources */,
 				4571567C2BFB8F9200BCBF8B /* HelpfulFunctions.swift in Sources */,
 				45F4E16F2BF3D4DE0091DBF3 /* AppDelegate.swift in Sources */,
+				4571567E2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift in Sources */,
 				45908B672BFA746A0074F361 /* LocationEntity+CoreDataClass.swift in Sources */,
 				45908B642BFA746A0074F361 /* RouteEntity+CoreDataClass.swift in Sources */,
 				45908B6F2BFA82070074F361 /* RouteEntity.swift in Sources */,
