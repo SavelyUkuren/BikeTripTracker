@@ -31,6 +31,17 @@ class RoutesViewController: UIViewController {
         routes = coreDataManager.loadRoutes()
     }
     
+    private func deleteRoute(_ indexPath: IndexPath) {
+        let route = self.routes[indexPath.row]
+        
+        routes.remove(at: indexPath.row)
+        routesTableView.deleteRows(at: [indexPath], with: .automatic)
+        routesTableView.reloadData()
+        
+        let coreDataManager = CoreDataManager()
+        coreDataManager.deleteRoute(route)
+    }
+    
     // MARK: - Actions
     @IBAction func backButtonTapped(_ sender: Any) {
         dismiss(animated: true)
@@ -59,6 +70,19 @@ extension RoutesViewController: UITableViewDelegate, UITableViewDataSource {
             
             navigationController?.pushViewController(routeDetailVC, animated: true)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+            self.deleteRoute(indexPath)
+        }
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction])
+        return swipeActions
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
     }
     
 }

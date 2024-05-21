@@ -66,6 +66,35 @@ class CoreDataManager {
         return []
     }
     
+    func deleteRoute(_ route: RouteModel) {
+        guard let context = viewContext else {
+            print ("CoreDataManager viewContext is nil")
+            return
+        }
+        
+        let request = RouteEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %@", route.id as CVarArg)
+        
+        do {
+            
+            if let rEntity = try context.fetch(request).first {
+                
+                if let locations = rEntity.locations?.allObjects as? [LocationEntity] {
+                    for i in locations {
+                        context.delete(i)
+                    }
+                }
+                
+                context.delete(rEntity)
+                
+                save()
+            }
+            
+        } catch {
+            print ("Could't delete the route!")
+        }
+    }
+    
     private func save() {
         do {
             try viewContext?.save()
