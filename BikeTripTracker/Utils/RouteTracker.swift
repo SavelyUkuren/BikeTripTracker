@@ -25,9 +25,6 @@ class RouteTracker: NSObject {
     var distance: Double = 0
     var timeDuration: Int = 0
     
-    var speedMeasureUnit: SpeedMeasureUnit = .kilometersPerHour
-    var distanceMeasureUnit: DistanceMeasureUnit = .kilometers
-    
     weak var delegate: RouteTrackerDelegate?
     
     private(set) var state: TrackerState = .idle

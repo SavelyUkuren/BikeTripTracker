@@ -28,6 +28,10 @@
 		45944BC72BF3FF6400B8F728 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45944BC22BF3FED900B8F728 /* MapKit.framework */; };
 		45944BCB2BF4020D00B8F728 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45944BCA2BF4020D00B8F728 /* CoreLocation.framework */; };
 		45B6EC822BFCC18B00604A5E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC812BFCC18B00604A5E /* SettingsViewController.swift */; };
+		45B6EC842BFCC6A300604A5E /* AppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC832BFCC6A300604A5E /* AppearanceViewController.swift */; };
+		45B6EC862BFCC70D00604A5E /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC852BFCC70D00604A5E /* AppearanceMode.swift */; };
+		45B6EC882BFCC73300604A5E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC872BFCC73300604A5E /* Settings.swift */; };
+		45B6EC8A2BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC892BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift */; };
 		45DA05752BF48922007951E7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA05742BF48922007951E7 /* DetailsViewController.swift */; };
 		45DA05782BF489BC007951E7 /* OverlayContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 45DA05772BF489BC007951E7 /* OverlayContainer */; };
 		45DA057A2BF489F5007951E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA05792BF489F5007951E7 /* MainViewController.swift */; };
@@ -64,6 +68,10 @@
 		45944BC22BF3FED900B8F728 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		45944BCA2BF4020D00B8F728 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		45B6EC812BFCC18B00604A5E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		45B6EC832BFCC6A300604A5E /* AppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceViewController.swift; sourceTree = "<group>"; };
+		45B6EC852BFCC70D00604A5E /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
+		45B6EC872BFCC73300604A5E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		45B6EC892BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsOfMeasureViewController.swift; sourceTree = "<group>"; };
 		45DA05742BF48922007951E7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		45DA05792BF489F5007951E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		45DA057F2BF4E409007951E7 /* RouteTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTracker.swift; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 				45DA05812BF4E448007951E7 /* TrackerState.swift */,
 				4529E5252BF50565008B6388 /* SpeedMeasureUnit.swift */,
 				4571567D2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift */,
+				45B6EC852BFCC70D00604A5E /* AppearanceMode.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -134,6 +143,7 @@
 			children = (
 				45DA057F2BF4E409007951E7 /* RouteTracker.swift */,
 				4571567B2BFB8F9200BCBF8B /* HelpfulFunctions.swift */,
+				45B6EC872BFCC73300604A5E /* Settings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -190,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				45B6EC812BFCC18B00604A5E /* SettingsViewController.swift */,
+				45B6EC832BFCC6A300604A5E /* AppearanceViewController.swift */,
+				45B6EC892BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -350,11 +362,13 @@
 				4571567C2BFB8F9200BCBF8B /* HelpfulFunctions.swift in Sources */,
 				45F4E16F2BF3D4DE0091DBF3 /* AppDelegate.swift in Sources */,
 				4571567E2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift in Sources */,
+				45B6EC842BFCC6A300604A5E /* AppearanceViewController.swift in Sources */,
 				45908B672BFA746A0074F361 /* LocationEntity+CoreDataClass.swift in Sources */,
 				45908B642BFA746A0074F361 /* RouteEntity+CoreDataClass.swift in Sources */,
 				45908B6F2BFA82070074F361 /* RouteEntity.swift in Sources */,
 				45DA05822BF4E448007951E7 /* TrackerState.swift in Sources */,
 				45908B6B2BFA7BA40074F361 /* RouteModel.swift in Sources */,
+				45B6EC862BFCC70D00604A5E /* AppearanceMode.swift in Sources */,
 				45DA05752BF48922007951E7 /* DetailsViewController.swift in Sources */,
 				45908B692BFA74780074F361 /* CoreDataManager.swift in Sources */,
 				45908B512BF9FBF60074F361 /* LocationModel.swift in Sources */,
@@ -362,12 +376,14 @@
 				4529E5262BF50565008B6388 /* SpeedMeasureUnit.swift in Sources */,
 				457156782BFA895C00BCBF8B /* RouteTableViewCell.swift in Sources */,
 				45DA05802BF4E409007951E7 /* RouteTracker.swift in Sources */,
+				45B6EC8A2BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift in Sources */,
 				45DA057A2BF489F5007951E7 /* MainViewController.swift in Sources */,
 				45908B542BFA000F0074F361 /* RoutePolyline.swift in Sources */,
 				45908B6D2BFA7F120074F361 /* RoutesViewController.swift in Sources */,
 				45908B652BFA746A0074F361 /* LocationEntity+CoreDataProperties.swift in Sources */,
 				4529E5232BF4EF4A008B6388 /* RouteTrackerDelegate.swift in Sources */,
 				4571567A2BFB32D500BCBF8B /* RouteDetailViewController.swift in Sources */,
+				45B6EC882BFCC73300604A5E /* Settings.swift in Sources */,
 				45F4E1792BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld in Sources */,
 				45908B4F2BF9F4250074F361 /* Double.swift in Sources */,
 				45F4E1712BF3D4DE0091DBF3 /* SceneDelegate.swift in Sources */,

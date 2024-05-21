@@ -151,10 +151,10 @@
             </objects>
             <point key="canvasLocation" x="3070" y="1773"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Appearance View Controller-->
         <scene sceneID="Kdb-WE-K33">
             <objects>
-                <tableViewController id="hWw-XY-J5T" sceneMemberID="viewController">
+                <tableViewController id="hWw-XY-J5T" customClass="AppearanceViewController" customModule="BikeTripTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="CIb-6m-POx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,6 +231,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="tu2-cm-vsj"/>
+                    <connections>
+                        <outlet property="appearanceTableView" destination="CIb-6m-POx" id="S6e-Mp-4uX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="019-u4-nDg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -932,10 +935,10 @@
             </objects>
             <point key="canvasLocation" x="1262" y="1827"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Units Of Measure View Controller-->
         <scene sceneID="Zzz-4h-1fw">
             <objects>
-                <tableViewController id="RLn-6O-J5O" sceneMemberID="viewController">
+                <tableViewController id="RLn-6O-J5O" customClass="UnitsOfMeasureViewController" customModule="BikeTripTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="HUE-16-1f8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1036,6 +1039,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="IKv-5j-37s"/>
+                    <connections>
+                        <outlet property="unitOfMeasureTableView" destination="HUE-16-1f8" id="ZeP-IC-Ih8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAd-Hp-pDH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

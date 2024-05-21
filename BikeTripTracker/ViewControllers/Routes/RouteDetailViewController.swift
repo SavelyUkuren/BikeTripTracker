@@ -20,6 +20,7 @@ class RouteDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     private var routeTracker = RouteTracker.shared
+    private var settings = Settings.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +36,13 @@ class RouteDetailViewController: UIViewController {
             return
         }
         
-        let speedMeasureUnitText = routeTracker.speedMeasureUnit == .metersPerSecond ? "m/s" : "km/h"
-        let distanceMeasureUnit = routeTracker.distanceMeasureUnit == .meters ? "m" : "km"
+        let speedMeasureUnitText = settings.speedMeasureUnit == .metersPerSecond ? "m/s" : "km/h"
+        let distanceMeasureUnit = settings.distanceMeasureUnit == .meters ? "m" : "km"
         
-        let avgSpeed = routeTracker.speedMeasureUnit == .metersPerSecond ? route.avgSpeed : route.avgSpeed * 3.6
-        let maxSpeed = routeTracker.speedMeasureUnit == .metersPerSecond ? route.maxSpeed : route.maxSpeed * 3.6
+        let avgSpeed = settings.speedMeasureUnit == .metersPerSecond ? route.avgSpeed : route.avgSpeed * 3.6
+        let maxSpeed = settings.speedMeasureUnit == .metersPerSecond ? route.maxSpeed : route.maxSpeed * 3.6
         
-        let distance = routeTracker.distanceMeasureUnit == .meters ? route.distance : route.distance / 1000
+        let distance = settings.distanceMeasureUnit == .meters ? route.distance : route.distance / 1000
         
         distanceLabel.text = String(distance.round(to: 2)) + " " + distanceMeasureUnit
         averageSpeedLabel.text = String(avgSpeed.round(to: 1)) + " " + speedMeasureUnitText
