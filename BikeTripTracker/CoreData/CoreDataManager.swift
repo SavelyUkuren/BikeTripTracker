@@ -27,11 +27,12 @@ class CoreDataManager {
         rEntity.date = route.date
         
         if !route.locations.isEmpty {
-            for location in route.locations {
+            for (index, location) in route.locations.enumerated() {
                 let lEntity = LocationEntity(context: context)
                 lEntity.latitude = location.latitude
                 lEntity.longitude = location.longitude
                 lEntity.speed = location.speed ?? 0
+                lEntity.index = Int64(index)
                 
                 rEntity.addToLocations(lEntity)
             }
@@ -50,9 +51,13 @@ class CoreDataManager {
         
         do {
             
-            let routes = try context.fetch(request)
+            let routeEntities = try context.fetch(request)
+            var routes = routeEntities.map { $0.model }
+            for i in 0..<routes.count {
+                routes[i].locations = routes[i].locations.sorted { $0.index! < $1.index! }
+            }
             
-            return routes.map { $0.model }
+            return routes
             
         } catch {
             print ("Could't load routes!")

@@ -52,5 +52,13 @@ extension RoutesViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let routeDetailVC = storyboard.instantiateViewController(withIdentifier: "RouteDetailVC") as? RouteDetailViewController {
+            routeDetailVC.route = routes[indexPath.row]
+            
+            navigationController?.pushViewController(routeDetailVC, animated: true)
+        }
+    }
     
 }

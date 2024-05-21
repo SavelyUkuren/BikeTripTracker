@@ -102,9 +102,9 @@ class DetailsViewController: UIViewController {
     
     @IBAction func routesButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let routesVC = storyboard.instantiateViewController(withIdentifier: "routesVC") as? RoutesViewController {
-            present(routesVC, animated: true)
-        }
+        let routesNC = storyboard.instantiateViewController(withIdentifier: "routesNC")
+        present(routesNC, animated: true)
+        
     }
     
 }

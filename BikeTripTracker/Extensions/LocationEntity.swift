@@ -12,7 +12,7 @@ extension LocationEntity {
     var model: LocationModel {
         let m = LocationModel(latitude: self.latitude,
                               longtitude: self.longitude,
-                              speed: self.speed)
+                              speed: self.speed, index: Int(self.index))
         return m
     }
     
