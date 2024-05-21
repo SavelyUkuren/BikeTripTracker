@@ -27,6 +27,7 @@
 		45908B712BFA82B00074F361 /* LocationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45908B702BFA82B00074F361 /* LocationEntity.swift */; };
 		45944BC72BF3FF6400B8F728 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45944BC22BF3FED900B8F728 /* MapKit.framework */; };
 		45944BCB2BF4020D00B8F728 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45944BCA2BF4020D00B8F728 /* CoreLocation.framework */; };
+		45B6EC822BFCC18B00604A5E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC812BFCC18B00604A5E /* SettingsViewController.swift */; };
 		45DA05752BF48922007951E7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA05742BF48922007951E7 /* DetailsViewController.swift */; };
 		45DA05782BF489BC007951E7 /* OverlayContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 45DA05772BF489BC007951E7 /* OverlayContainer */; };
 		45DA057A2BF489F5007951E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA05792BF489F5007951E7 /* MainViewController.swift */; };
@@ -62,6 +63,7 @@
 		45908B702BFA82B00074F361 /* LocationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntity.swift; sourceTree = "<group>"; };
 		45944BC22BF3FED900B8F728 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		45944BCA2BF4020D00B8F728 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		45B6EC812BFCC18B00604A5E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		45DA05742BF48922007951E7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		45DA05792BF489F5007951E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		45DA057F2BF4E409007951E7 /* RouteTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTracker.swift; sourceTree = "<group>"; };
@@ -165,15 +167,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		45DA057B2BF4E393007951E7 /* ViewControllers */ = {
+		45B6EC7E2BFCC15C00604A5E /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				457156762BFA893E00BCBF8B /* TableViewCells */,
+				45908B6C2BFA7F120074F361 /* RoutesViewController.swift */,
+				457156792BFB32D500BCBF8B /* RouteDetailViewController.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		45B6EC7F2BFCC16500604A5E /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				45DA05742BF48922007951E7 /* DetailsViewController.swift */,
 				45DA05792BF489F5007951E7 /* MainViewController.swift */,
 				45F4E1722BF3D4DE0091DBF3 /* MapViewController.swift */,
-				45908B6C2BFA7F120074F361 /* RoutesViewController.swift */,
-				457156792BFB32D500BCBF8B /* RouteDetailViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		45B6EC802BFCC17300604A5E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				45B6EC812BFCC18B00604A5E /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		45DA057B2BF4E393007951E7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				45B6EC802BFCC17300604A5E /* Settings */,
+				45B6EC7F2BFCC16500604A5E /* Main */,
+				45B6EC7E2BFCC15C00604A5E /* Routes */,
+				457156762BFA893E00BCBF8B /* TableViewCells */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -345,6 +372,7 @@
 				45908B4F2BF9F4250074F361 /* Double.swift in Sources */,
 				45F4E1712BF3D4DE0091DBF3 /* SceneDelegate.swift in Sources */,
 				45908B712BFA82B00074F361 /* LocationEntity.swift in Sources */,
+				45B6EC822BFCC18B00604A5E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
