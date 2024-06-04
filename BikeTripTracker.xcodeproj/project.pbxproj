@@ -32,6 +32,7 @@
 		45B6EC862BFCC70D00604A5E /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC852BFCC70D00604A5E /* AppearanceMode.swift */; };
 		45B6EC882BFCC73300604A5E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC872BFCC73300604A5E /* Settings.swift */; };
 		45B6EC8A2BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC892BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift */; };
+		45D2A8062C09A815008DB7AA /* RoutesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2A8052C09A815008DB7AA /* RoutesRow.swift */; };
 		45DA05752BF48922007951E7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA05742BF48922007951E7 /* DetailsViewController.swift */; };
 		45DA05782BF489BC007951E7 /* OverlayContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 45DA05772BF489BC007951E7 /* OverlayContainer */; };
 		45DA057A2BF489F5007951E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA05792BF489F5007951E7 /* MainViewController.swift */; };
@@ -72,6 +73,7 @@
 		45B6EC852BFCC70D00604A5E /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
 		45B6EC872BFCC73300604A5E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		45B6EC892BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsOfMeasureViewController.swift; sourceTree = "<group>"; };
+		45D2A8052C09A815008DB7AA /* RoutesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesRow.swift; sourceTree = "<group>"; };
 		45DA05742BF48922007951E7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		45DA05792BF489F5007951E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		45DA057F2BF4E409007951E7 /* RouteTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTracker.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				45908B502BF9FBF60074F361 /* LocationModel.swift */,
 				45908B532BFA000F0074F361 /* RoutePolyline.swift */,
 				45908B6A2BFA7BA40074F361 /* RouteModel.swift */,
+				45D2A8052C09A815008DB7AA /* RoutesRow.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				4571567C2BFB8F9200BCBF8B /* HelpfulFunctions.swift in Sources */,
 				45F4E16F2BF3D4DE0091DBF3 /* AppDelegate.swift in Sources */,
 				4571567E2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift in Sources */,
+				45D2A8062C09A815008DB7AA /* RoutesRow.swift in Sources */,
 				45B6EC842BFCC6A300604A5E /* AppearanceViewController.swift in Sources */,
 				45908B672BFA746A0074F361 /* LocationEntity+CoreDataClass.swift in Sources */,
 				45908B642BFA746A0074F361 /* RouteEntity+CoreDataClass.swift in Sources */,

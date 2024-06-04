@@ -10,11 +10,12 @@ import CoreLocation
 
 protocol RouteTrackerDelegate: AnyObject {
     func locationUpdate(_ locations: [LocationModel])
+    func errorOccured(msg: String)
+    func didStart()
+    func didStop()
 }
 
 extension RouteTrackerDelegate {
-    func didStart() {}
-    func didStop() {}
     func didResume() {}
     func didPause() {}
 }

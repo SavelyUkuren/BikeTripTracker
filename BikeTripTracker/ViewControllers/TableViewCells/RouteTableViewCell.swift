@@ -31,6 +31,7 @@ class RouteTableViewCell: UITableViewCell {
         
         dateLabel.text = formatDate(date: route.date)
         distanceLabel.text = "\(distance.round(to: 2)) \(distanceMeasureUnit)"
+        
     }
     
     func formatDate(date: Date) -> String {

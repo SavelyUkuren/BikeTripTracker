@@ -11,7 +11,9 @@ class RoutesViewController: UIViewController {
 
     @IBOutlet weak var routesTableView: UITableView!
     
-    private var routes: [RouteModel] = []
+    private var routes: [RoutesRow] = []
+    private var routeDetailIsLoaded = false
+    private var selectedRouteCellIndex: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +30,43 @@ class RoutesViewController: UIViewController {
     private func loadRoutes() {
         let coreDataManager = CoreDataManager()
         
-        routes = coreDataManager.loadRoutes()
+        let allRoutes = coreDataManager.loadRoutes()
+        
+        let groupedRoutes = Dictionary(grouping: allRoutes) { route in
+            Calendar.current.dateComponents([.month, .year], from: route.date)
+        }
+        
+        let formatter = DateFormatter()
+        for (components, routes) in groupedRoutes {
+            
+            let monthTitle = formatter.monthSymbols[components.month! - 1]
+            let year = components.year!
+            let sortedRoutes = routes.sorted { $0.date > $1.date }
+            
+            let routesRow = RoutesRow(title: "\(monthTitle) \(year)",
+                                      monthNumber: components.month!, routes: sortedRoutes)
+            
+            self.routes.append(routesRow)
+        }
+//        routes = routes.sorted { $0.date > $1.date }
+        
     }
     
     private func deleteRoute(_ indexPath: IndexPath) {
-        let route = self.routes[indexPath.row]
+        let route = self.routes[indexPath.section].routes[indexPath.row]
         
-        routes.remove(at: indexPath.row)
+        routes[indexPath.section].routes.remove(at: indexPath.row)
+        
+        routesTableView.beginUpdates()
+        
         routesTableView.deleteRows(at: [indexPath], with: .automatic)
-        routesTableView.reloadData()
+        
+        if routes[indexPath.section].routes.isEmpty {
+            routes.remove(at: indexPath.section)
+            routesTableView.deleteSections(IndexSet(integer: indexPath.section), with: .automatic)
+        }
+        
+        routesTableView.endUpdates()
         
         let coreDataManager = CoreDataManager()
         coreDataManager.deleteRoute(route)
@@ -51,13 +81,17 @@ class RoutesViewController: UIViewController {
 extension RoutesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        routes[section].routes.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         routes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! RouteTableViewCell
         
-        let route = routes[indexPath.row]
+        let route = routes[indexPath.section].routes[indexPath.row]
         cell.setRoute(route)
         
         return cell
@@ -66,10 +100,16 @@ extension RoutesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let routeDetailVC = storyboard.instantiateViewController(withIdentifier: "RouteDetailVC") as? RouteDetailViewController {
-            routeDetailVC.route = routes[indexPath.row]
+            selectedRouteCellIndex = indexPath
+            routeDetailVC.route = routes[indexPath.section].routes[indexPath.row]
             
             navigationController?.pushViewController(routeDetailVC, animated: true)
+            
         }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        routes[section].title
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

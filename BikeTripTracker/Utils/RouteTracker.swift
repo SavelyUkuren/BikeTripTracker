@@ -48,11 +48,16 @@ class RouteTracker: NSObject {
     }
     
     func start() {
+        
+        guard let startCoordinate = locationManager.location?.coordinate else {
+            delegate?.errorOccured(msg: "Can't access to your location!")
+            return
+        }
+        
         state = .tracking
         distance = 0
         timeDuration = 0
         
-        let startCoordinate = locationManager.location!.coordinate
         locations = [LocationModel(latitude: startCoordinate.latitude,
                                    longtitude: startCoordinate.longitude)]
         

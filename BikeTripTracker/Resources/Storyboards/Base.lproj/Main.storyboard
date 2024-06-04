@@ -3,7 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -578,7 +578,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SC9-YY-2Qj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="32" estimatedSectionHeaderHeight="-1" sectionFooterHeight="32" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SC9-YY-2Qj">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <prototypes>
@@ -724,13 +724,6 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="110" id="h6I-Pc-gCu"/>
                                                 </constraints>
                                             </stackView>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNl-0n-AQP">
-                                                <rect key="frame" x="16" y="328.66666666666669" width="382" height="300.00000000000006"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="P0o-hX-OFL"/>
-                                                </constraints>
-                                                <standardMapConfiguration key="preferredConfiguration"/>
-                                            </mapView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pGD-LD-uaE">
                                                 <rect key="frame" x="16" y="142" width="382" height="110"/>
                                                 <subviews>
@@ -800,13 +793,26 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7c-mW-5C7">
+                                                <rect key="frame" x="16" y="328.66666666666669" width="382" height="300.00000000000006"/>
+                                                <subviews>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="07W-t3-lql">
+                                                        <rect key="frame" x="181" y="139.99999999999994" width="20" height="20"/>
+                                                    </activityIndicatorView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="07W-t3-lql" firstAttribute="centerX" secondItem="L7c-mW-5C7" secondAttribute="centerX" id="ahn-K8-z3Z"/>
+                                                    <constraint firstItem="07W-t3-lql" firstAttribute="centerY" secondItem="L7c-mW-5C7" secondAttribute="centerY" id="m3S-Yj-hJ8"/>
+                                                    <constraint firstAttribute="height" constant="300" id="yVN-2l-4UY"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="eNl-0n-AQP" secondAttribute="trailing" constant="16" id="5jK-1Y-RG9"/>
-                                            <constraint firstItem="eNl-0n-AQP" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="AmP-ra-4LL"/>
-                                            <constraint firstItem="eNl-0n-AQP" firstAttribute="top" secondItem="RaD-AR-jvS" secondAttribute="bottom" constant="16" id="Gc6-JK-y8j"/>
+                                            <constraint firstItem="L7c-mW-5C7" firstAttribute="top" secondItem="RaD-AR-jvS" secondAttribute="bottom" constant="16" id="AZ2-7T-3vN"/>
                                             <constraint firstAttribute="trailing" secondItem="ViU-vP-NUm" secondAttribute="trailing" constant="16" id="OGB-9k-Ibp"/>
+                                            <constraint firstAttribute="trailing" secondItem="L7c-mW-5C7" secondAttribute="trailing" constant="16" id="RSi-sz-LcW"/>
                                             <constraint firstItem="ViU-vP-NUm" firstAttribute="top" secondItem="yXl-10-yf0" secondAttribute="top" constant="16" id="bcO-sN-XgI"/>
                                             <constraint firstAttribute="trailing" secondItem="pGD-LD-uaE" secondAttribute="trailing" constant="16" id="ds9-bK-j7b"/>
                                             <constraint firstItem="RaD-AR-jvS" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="32" id="jCQ-vI-qCg"/>
@@ -814,6 +820,7 @@
                                             <constraint firstAttribute="height" constant="800" id="kqk-Y3-IKg"/>
                                             <constraint firstItem="ViU-vP-NUm" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="msc-A1-7J3"/>
                                             <constraint firstItem="pGD-LD-uaE" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="pjY-lE-Ofi"/>
+                                            <constraint firstItem="L7c-mW-5C7" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="woe-R0-4Po"/>
                                             <constraint firstItem="RaD-AR-jvS" firstAttribute="top" secondItem="pGD-LD-uaE" secondAttribute="bottom" constant="32" id="ybl-H2-bUV"/>
                                         </constraints>
                                     </view>
@@ -841,7 +848,8 @@
                     <connections>
                         <outlet property="averageSpeedLabel" destination="aHQ-KG-p2J" id="wRN-HH-QsH"/>
                         <outlet property="distanceLabel" destination="RWT-OU-icS" id="4w1-hd-2za"/>
-                        <outlet property="mapView" destination="eNl-0n-AQP" id="RXf-m9-TNv"/>
+                        <outlet property="mapViewLoadIndicator" destination="07W-t3-lql" id="zVO-8h-Ee9"/>
+                        <outlet property="mapViewPlacement" destination="L7c-mW-5C7" id="mdN-i5-kLy"/>
                         <outlet property="maxSpeedLabel" destination="IGq-Zy-mHX" id="Bag-ZK-2uI"/>
                         <outlet property="timeLabel" destination="QAp-JA-37R" id="f4W-VL-VpE"/>
                     </connections>

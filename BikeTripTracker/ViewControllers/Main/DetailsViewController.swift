@@ -94,6 +94,22 @@ class DetailsViewController: UIViewController {
         avgSpeedLabel.text = String(avgSpeed.round(to: 1)) + " " + speedMeasureUnitText
     }
     
+    func showAlertIfStopButtonTapped(yesAction: @escaping (UIAlertAction) -> ()) {
+        let alert = UIAlertController(title: "Stop tracking",
+                                      message: "Do you really want to finish the route?", preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: yesAction)
+        
+        let noAction = UIAlertAction(title: "No", style: .default)
+        
+        alert.addAction(noAction)
+        alert.addAction(yesAction)
+        
+        present(alert, animated: true)
+        
+        
+    }
+    
     // MARK: - Actions
     @objc private func updateInfo() {
         guard routeTracker.state == .tracking else { return }
@@ -119,8 +135,10 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func stopButtonTapped(_ sender: Any) {
-        routeTracker.stop()
-        startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        showAlertIfStopButtonTapped { _ in
+            self.routeTracker.stop()
+            self.startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        }
     }
     
     @IBAction func routesButtonTapped(_ sender: Any) {

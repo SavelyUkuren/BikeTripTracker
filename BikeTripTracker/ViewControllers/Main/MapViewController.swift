@@ -34,6 +34,15 @@ class MapViewController: UIViewController {
         
     }
     
+    func showErrorMessage(msg: String) {
+        let alert = UIAlertController(title: "Error",
+                                      message: msg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
+    }
+    
 }
 
 extension MapViewController: RouteTrackerDelegate {
@@ -59,7 +68,15 @@ extension MapViewController: RouteTrackerDelegate {
         
     }
     
+    func errorOccured(msg: String) {
+        showErrorMessage(msg: msg)
+    }
+    
     func didStart() {
+        
+    }
+    
+    func didStop() {
         mapView.overlays.forEach {
             mapView.removeOverlay($0)
         }
