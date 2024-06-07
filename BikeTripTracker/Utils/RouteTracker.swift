@@ -144,7 +144,9 @@ extension RouteTracker: CLLocationManagerDelegate {
         if let newCoordinate = locations.first?.coordinate {
             let locModel = LocationModel(latitude: newCoordinate.latitude,
                                          longtitude: newCoordinate.longitude, speed: speed)
-            self.locations.append(locModel)
+            if routeFilter(lastCoord: locations.last!.coordinate, newCoord: newCoordinate) {
+                self.locations.append(locModel)
+            }
         }
         
         calculateDistance()

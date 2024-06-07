@@ -95,7 +95,9 @@ class RouteDetailViewController: UIViewController {
                 let polyline = RoutePolyline(coordinates: coords, count: coords.count)
                 polyline.color = color
                 
-                self.mapView?.addOverlay(polyline)
+                if routeFilter(lastCoord: start, newCoord: end) {
+                    self.mapView?.addOverlay(polyline)
+                }
             }
             
             if let complitionHandler = complitionHandler {

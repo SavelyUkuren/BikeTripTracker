@@ -326,13 +326,18 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="N3r-0T-PGY" firstAttribute="leading" secondItem="Esg-YK-qTU" secondAttribute="leading" constant="8" id="0Xb-9b-fgR"/>
                                                             <constraint firstItem="Rzs-0H-CU0" firstAttribute="centerX" secondItem="Esg-YK-qTU" secondAttribute="centerX" id="BXe-9H-GFy"/>
                                                             <constraint firstAttribute="bottom" secondItem="N3r-0T-PGY" secondAttribute="bottom" constant="8" id="C0R-FW-Las"/>
                                                             <constraint firstItem="Rzs-0H-CU0" firstAttribute="centerY" secondItem="Esg-YK-qTU" secondAttribute="centerY" id="O4a-cI-DD1"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -363,11 +368,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="vMF-zi-0px" firstAttribute="centerY" secondItem="0Oy-z7-Cqe" secondAttribute="centerY" id="Thg-ep-1wS"/>
                                                             <constraint firstItem="vMF-zi-0px" firstAttribute="leading" secondItem="0Oy-z7-Cqe" secondAttribute="leading" constant="16" id="voS-xO-C6F"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UcA-B7-dS2">
                                                         <rect key="frame" x="199" y="0.0" width="183" height="90"/>
@@ -390,11 +400,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="fC7-VY-QdS" firstAttribute="centerY" secondItem="UcA-B7-dS2" secondAttribute="centerY" id="INo-dP-dc0"/>
                                                             <constraint firstItem="fC7-VY-QdS" firstAttribute="leading" secondItem="UcA-B7-dS2" secondAttribute="leading" constant="16" id="zfc-80-Jti"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <viewLayoutGuide key="safeArea" id="fSt-5e-a1I"/>
@@ -421,7 +436,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="TJk-yl-CtP" firstAttribute="centerY" secondItem="u53-K2-ZK7" secondAttribute="centerY" id="Gfh-76-E0x"/>
                                                             <constraint firstAttribute="trailing" secondItem="TJk-yl-CtP" secondAttribute="trailing" constant="8" id="M9O-WC-oni"/>
@@ -429,6 +444,11 @@
                                                             <constraint firstItem="uyc-ol-mis" firstAttribute="leading" secondItem="u53-K2-ZK7" secondAttribute="leading" constant="8" id="mLc-CY-F1B"/>
                                                             <constraint firstAttribute="height" constant="60" id="zp8-2e-XWt"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AsR-FV-svU">
                                                         <rect key="frame" x="0.0" y="76" width="382" height="60"/>
@@ -446,13 +466,18 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="195-Dm-zCS" firstAttribute="centerY" secondItem="AsR-FV-svU" secondAttribute="centerY" id="DXF-qw-TlW"/>
                                                             <constraint firstItem="195-Dm-zCS" firstAttribute="leading" secondItem="AsR-FV-svU" secondAttribute="leading" constant="8" id="F9h-ZO-0Q0"/>
                                                             <constraint firstAttribute="trailing" secondItem="qWS-ab-Xjo" secondAttribute="trailing" constant="8" id="cJX-4S-dK1"/>
                                                             <constraint firstItem="qWS-ab-Xjo" firstAttribute="centerY" secondItem="AsR-FV-svU" secondAttribute="centerY" id="eA6-Vj-amp"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                             </stackView>
@@ -530,7 +555,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="quW-v2-7q6"/>
                                 </constraints>
@@ -685,11 +710,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="Lmf-2l-0A0" firstAttribute="leading" secondItem="Ljz-EP-Ea0" secondAttribute="leading" constant="24" id="6eo-Gw-DMq"/>
                                                             <constraint firstItem="Lmf-2l-0A0" firstAttribute="centerY" secondItem="Ljz-EP-Ea0" secondAttribute="centerY" id="JdG-Ws-YQk"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-EU-M7m">
                                                         <rect key="frame" x="199" y="0.0" width="183" height="110"/>
@@ -712,11 +742,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="Bp8-Yt-fOw" firstAttribute="centerY" secondItem="QYX-EU-M7m" secondAttribute="centerY" id="NUK-xT-mEV"/>
                                                             <constraint firstItem="Bp8-Yt-fOw" firstAttribute="leading" secondItem="QYX-EU-M7m" secondAttribute="leading" constant="16" id="fVw-5B-8hR"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -748,11 +783,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="TEd-fZ-4A6" firstAttribute="leading" secondItem="7dH-lX-wzg" secondAttribute="leading" constant="16" id="4cx-UW-jd6"/>
                                                             <constraint firstItem="TEd-fZ-4A6" firstAttribute="centerY" secondItem="7dH-lX-wzg" secondAttribute="centerY" id="ZgU-Wl-MMx"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVp-Lp-LrJ">
                                                         <rect key="frame" x="199" y="0.0" width="183" height="110"/>
@@ -775,11 +815,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="Xdh-KH-ayN" firstAttribute="centerY" secondItem="FVp-Lp-LrJ" secondAttribute="centerY" id="HJU-Qd-xsd"/>
                                                             <constraint firstItem="Xdh-KH-ayN" firstAttribute="leading" secondItem="FVp-Lp-LrJ" secondAttribute="leading" constant="16" id="Yhj-39-VZB"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -800,12 +845,17 @@
                                                         <rect key="frame" x="181" y="139.99999999999994" width="20" height="20"/>
                                                     </activityIndicatorView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="07W-t3-lql" firstAttribute="centerX" secondItem="L7c-mW-5C7" secondAttribute="centerX" id="ahn-K8-z3Z"/>
                                                     <constraint firstItem="07W-t3-lql" firstAttribute="centerY" secondItem="L7c-mW-5C7" secondAttribute="centerY" id="m3S-Yj-hJ8"/>
                                                     <constraint firstAttribute="height" constant="300" id="yVN-2l-4UY"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1064,6 +1114,9 @@
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -1072,9 +1125,6 @@
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
