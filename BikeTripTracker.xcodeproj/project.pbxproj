@@ -191,8 +191,8 @@
 		45B6EC7F2BFCC16500604A5E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				45DA05742BF48922007951E7 /* DetailsViewController.swift */,
 				45DA05792BF489F5007951E7 /* MainViewController.swift */,
+				45DA05742BF48922007951E7 /* DetailsViewController.swift */,
 				45F4E1722BF3D4DE0091DBF3 /* MapViewController.swift */,
 			);
 			path = Main;
