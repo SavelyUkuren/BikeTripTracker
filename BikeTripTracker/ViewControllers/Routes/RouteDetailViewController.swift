@@ -22,7 +22,7 @@ class RouteDetailViewController: UIViewController {
     @IBOutlet weak var mapViewPlacement: UIView!
     private var mapView: MKMapView?
     
-    private var routeTracker = RouteTracker.shared
+//    private var routeTracker = RouteTracker.shared
     private var settings = Settings.shared
     private var coordinates: [RoutePolyline] = []
     

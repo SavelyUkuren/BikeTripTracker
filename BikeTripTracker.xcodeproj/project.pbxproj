@@ -33,14 +33,11 @@
 		45B6EC882BFCC73300604A5E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC872BFCC73300604A5E /* Settings.swift */; };
 		45B6EC8A2BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6EC892BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift */; };
 		45D2A8062C09A815008DB7AA /* RoutesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D2A8052C09A815008DB7AA /* RoutesRow.swift */; };
-		45DA05752BF48922007951E7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA05742BF48922007951E7 /* DetailsViewController.swift */; };
-		45DA05782BF489BC007951E7 /* OverlayContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 45DA05772BF489BC007951E7 /* OverlayContainer */; };
 		45DA057A2BF489F5007951E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA05792BF489F5007951E7 /* MainViewController.swift */; };
 		45DA05802BF4E409007951E7 /* RouteTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA057F2BF4E409007951E7 /* RouteTracker.swift */; };
 		45DA05822BF4E448007951E7 /* TrackerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA05812BF4E448007951E7 /* TrackerState.swift */; };
 		45F4E16F2BF3D4DE0091DBF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4E16E2BF3D4DE0091DBF3 /* AppDelegate.swift */; };
 		45F4E1712BF3D4DE0091DBF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4E1702BF3D4DE0091DBF3 /* SceneDelegate.swift */; };
-		45F4E1732BF3D4DE0091DBF3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4E1722BF3D4DE0091DBF3 /* MapViewController.swift */; };
 		45F4E1762BF3D4DE0091DBF3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 45F4E1752BF3D4DE0091DBF3 /* Base */; };
 		45F4E1792BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45F4E1772BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld */; };
 		45F4E17B2BF3D4E00091DBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F4E17A2BF3D4E00091DBF3 /* Assets.xcassets */; };
@@ -74,14 +71,12 @@
 		45B6EC872BFCC73300604A5E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		45B6EC892BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsOfMeasureViewController.swift; sourceTree = "<group>"; };
 		45D2A8052C09A815008DB7AA /* RoutesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesRow.swift; sourceTree = "<group>"; };
-		45DA05742BF48922007951E7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		45DA05792BF489F5007951E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		45DA057F2BF4E409007951E7 /* RouteTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTracker.swift; sourceTree = "<group>"; };
 		45DA05812BF4E448007951E7 /* TrackerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerState.swift; sourceTree = "<group>"; };
 		45F4E16B2BF3D4DE0091DBF3 /* BikeTripTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeTripTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F4E16E2BF3D4DE0091DBF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45F4E1702BF3D4DE0091DBF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		45F4E1722BF3D4DE0091DBF3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		45F4E1752BF3D4DE0091DBF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45F4E1782BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BikeTripTracker.xcdatamodel; sourceTree = "<group>"; };
 		45F4E17A2BF3D4E00091DBF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,7 +91,6 @@
 			files = (
 				45944BCB2BF4020D00B8F728 /* CoreLocation.framework in Frameworks */,
 				45944BC72BF3FF6400B8F728 /* MapKit.framework in Frameworks */,
-				45DA05782BF489BC007951E7 /* OverlayContainer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,8 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				45DA05792BF489F5007951E7 /* MainViewController.swift */,
-				45DA05742BF48922007951E7 /* DetailsViewController.swift */,
-				45F4E1722BF3D4DE0091DBF3 /* MapViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -301,7 +293,6 @@
 			);
 			name = BikeTripTracker;
 			packageProductDependencies = (
-				45DA05772BF489BC007951E7 /* OverlayContainer */,
 			);
 			productName = BikeTripTracker;
 			productReference = 45F4E16B2BF3D4DE0091DBF3 /* BikeTripTracker.app */;
@@ -332,7 +323,6 @@
 			);
 			mainGroup = 45F4E1622BF3D4DE0091DBF3;
 			packageReferences = (
-				45DA05762BF489BC007951E7 /* XCRemoteSwiftPackageReference "OverlayContainer" */,
 			);
 			productRefGroup = 45F4E16C2BF3D4DE0091DBF3 /* Products */;
 			projectDirPath = "";
@@ -361,7 +351,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45F4E1732BF3D4DE0091DBF3 /* MapViewController.swift in Sources */,
 				4571567C2BFB8F9200BCBF8B /* HelpfulFunctions.swift in Sources */,
 				45F4E16F2BF3D4DE0091DBF3 /* AppDelegate.swift in Sources */,
 				4571567E2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift in Sources */,
@@ -373,7 +362,6 @@
 				45DA05822BF4E448007951E7 /* TrackerState.swift in Sources */,
 				45908B6B2BFA7BA40074F361 /* RouteModel.swift in Sources */,
 				45B6EC862BFCC70D00604A5E /* AppearanceMode.swift in Sources */,
-				45DA05752BF48922007951E7 /* DetailsViewController.swift in Sources */,
 				45908B692BFA74780074F361 /* CoreDataManager.swift in Sources */,
 				45908B512BF9FBF60074F361 /* LocationModel.swift in Sources */,
 				45908B662BFA746A0074F361 /* RouteEntity+CoreDataProperties.swift in Sources */,
@@ -635,25 +623,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		45DA05762BF489BC007951E7 /* XCRemoteSwiftPackageReference "OverlayContainer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/applidium/OverlayContainer.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.5.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		45DA05772BF489BC007951E7 /* OverlayContainer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45DA05762BF489BC007951E7 /* XCRemoteSwiftPackageReference "OverlayContainer" */;
-			productName = OverlayContainer;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		45F4E1772BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld */ = {

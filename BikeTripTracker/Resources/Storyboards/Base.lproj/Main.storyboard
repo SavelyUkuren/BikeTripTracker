@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9V-zQ-C4W">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9V-zQ-C4W">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
@@ -113,6 +113,7 @@
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="y9K-lK-KL0">
                                                                 <rect key="frame" x="0.0" y="0.5" width="24" height="23"/>
+                                                                <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="24" id="9Qy-zy-nGg"/>
                                                                     <constraint firstAttribute="height" constant="24" id="uZJ-uM-h8h"/>
@@ -157,6 +158,7 @@
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gauge.with.dots.needle.33percent" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="C21-o7-hsN">
                                                                 <rect key="frame" x="0.0" y="0.5" width="24" height="23"/>
+                                                                <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="24" id="9G4-VD-WbU"/>
                                                                     <constraint firstAttribute="width" constant="24" id="Chm-Cs-Yxq"/>
@@ -201,6 +203,7 @@
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ruler" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-Ru-nTA">
                                                                 <rect key="frame" x="0.0" y="4.5" width="24" height="15"/>
+                                                                <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="24" id="Cq9-Bh-Tu5"/>
                                                                     <constraint firstAttribute="height" constant="24" id="Crl-ez-lge"/>
@@ -239,6 +242,23 @@
                                     <constraint firstAttribute="height" constant="90" id="Yxf-wX-ucH"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" alpha="0.94999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvc-Sk-o49">
+                                <rect key="frame" x="16" y="509" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="K0o-Ab-KyW"/>
+                                    <constraint firstAttribute="height" constant="55" id="VZB-Wb-MRI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="location" catalog="system" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="locationButtonTapped:" destination="SLp-8O-wHJ" eventType="touchUpInside" id="L2r-Ra-nHL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6zE-oT-ne4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -247,6 +267,7 @@
                             <constraint firstItem="6zE-oT-ne4" firstAttribute="trailing" secondItem="yOm-ul-HVE" secondAttribute="trailing" constant="16" id="8dp-fG-A9F"/>
                             <constraint firstItem="yOm-ul-HVE" firstAttribute="leading" secondItem="6zE-oT-ne4" secondAttribute="leading" constant="16" id="OuH-nr-zut"/>
                             <constraint firstItem="kaO-VY-eWb" firstAttribute="centerX" secondItem="hu2-iO-r9d" secondAttribute="centerX" id="P8T-sk-juE"/>
+                            <constraint firstItem="rvc-Sk-o49" firstAttribute="leading" secondItem="6zE-oT-ne4" secondAttribute="leading" constant="16" id="UOX-FZ-cD2"/>
                             <constraint firstAttribute="bottom" secondItem="a9V-zQ-C4W" secondAttribute="bottom" id="Z5K-va-etq"/>
                             <constraint firstItem="6zE-oT-ne4" firstAttribute="trailing" secondItem="GMs-py-ub3" secondAttribute="trailing" constant="15" id="bmw-V3-1mz"/>
                             <constraint firstItem="a9V-zQ-C4W" firstAttribute="top" secondItem="hu2-iO-r9d" secondAttribute="top" id="cBO-aR-4Zn"/>
@@ -255,12 +276,15 @@
                             <constraint firstItem="a9V-zQ-C4W" firstAttribute="leading" secondItem="6zE-oT-ne4" secondAttribute="leading" id="dyz-kf-DGM"/>
                             <constraint firstItem="6zE-oT-ne4" firstAttribute="bottom" secondItem="GMs-py-ub3" secondAttribute="bottom" constant="32" id="fmf-hk-eRf"/>
                             <constraint firstItem="6zE-oT-ne4" firstAttribute="bottom" secondItem="Sf1-Cl-YGf" secondAttribute="bottom" constant="32" id="hsK-ut-wFX"/>
+                            <constraint firstItem="Sf1-Cl-YGf" firstAttribute="top" secondItem="rvc-Sk-o49" secondAttribute="bottom" constant="16" id="vfe-bh-Qc9"/>
                             <constraint firstItem="a9V-zQ-C4W" firstAttribute="trailing" secondItem="6zE-oT-ne4" secondAttribute="trailing" id="yOU-dl-PjL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fUo-sZ-P5C"/>
                     <connections>
                         <outlet property="distanceLabel" destination="jpP-OO-zv7" id="8gh-gY-Gnc"/>
+                        <outlet property="locationButton" destination="rvc-Sk-o49" id="zd8-1U-aSC"/>
+                        <outlet property="mapView" destination="a9V-zQ-C4W" id="1R0-0e-DO0"/>
                         <outlet property="playPauseButton" destination="bzX-5K-wi5" id="KIl-XN-ieu"/>
                         <outlet property="speedLabel" destination="7EI-QA-j7O" id="WLB-Ue-W7p"/>
                         <outlet property="stopButton" destination="Xv3-Mi-6vM" id="fRX-a1-gnh"/>
@@ -1354,6 +1378,7 @@
         <image name="gauge.with.dots.needle.33percent" catalog="system" width="128" height="123"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
+        <image name="location" catalog="system" width="128" height="119"/>
         <image name="paintbrush.fill" catalog="system" width="122" height="128"/>
         <image name="play.fill" catalog="system" width="120" height="128"/>
         <image name="ruler" catalog="system" width="128" height="57"/>

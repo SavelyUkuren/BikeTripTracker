@@ -10,7 +10,7 @@ import CoreLocation
 import MapKit
 
 class RouteTracker: NSObject {
-    static var shared = RouteTracker()
+//    static var shared = RouteTracker()
     
     var speed: CLLocationSpeed {
         guard let speed = locationManager.location?.speed else { return 0 }
@@ -37,7 +37,7 @@ class RouteTracker: NSObject {
     
     private let coreDataManager = CoreDataManager()
     
-    private override init() {
+    override init() {
         super.init()
         
         locationManager.delegate = self
