@@ -42,6 +42,7 @@
 		45F4E1792BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45F4E1772BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld */; };
 		45F4E17B2BF3D4E00091DBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F4E17A2BF3D4E00091DBF3 /* Assets.xcassets */; };
 		45F4E17E2BF3D4E00091DBF3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 45F4E17D2BF3D4E00091DBF3 /* Base */; };
+		7ACE9A3E2C1EF8E400646D4C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE9A3D2C1EF8E400646D4C /* UIFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		45F4E17A2BF3D4E00091DBF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45F4E17D2BF3D4E00091DBF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45F4E17F2BF3D4E00091DBF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ACE9A3D2C1EF8E400646D4C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				45908B4E2BF9F4250074F361 /* Double.swift */,
 				45908B6E2BFA82070074F361 /* RouteEntity.swift */,
 				45908B702BFA82B00074F361 /* LocationEntity.swift */,
+				7ACE9A3D2C1EF8E400646D4C /* UIFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				45908B512BF9FBF60074F361 /* LocationModel.swift in Sources */,
 				45908B662BFA746A0074F361 /* RouteEntity+CoreDataProperties.swift in Sources */,
 				4529E5262BF50565008B6388 /* SpeedMeasureUnit.swift in Sources */,
+				7ACE9A3E2C1EF8E400646D4C /* UIFont.swift in Sources */,
 				457156782BFA895C00BCBF8B /* RouteTableViewCell.swift in Sources */,
 				45DA05802BF4E409007951E7 /* RouteTracker.swift in Sources */,
 				45B6EC8A2BFCC9DD00604A5E /* UnitsOfMeasureViewController.swift in Sources */,

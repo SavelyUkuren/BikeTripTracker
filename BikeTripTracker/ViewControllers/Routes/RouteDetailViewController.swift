@@ -110,7 +110,7 @@ class RouteDetailViewController: UIViewController {
     private func configureMapView() {
         mapView = MKMapView(frame: mapViewPlacement.frame)
         mapView?.translatesAutoresizingMaskIntoConstraints = false
-        
+        mapView?.layer.cornerRadius = 20
     }
     
     private func addMapViewToScreen() {

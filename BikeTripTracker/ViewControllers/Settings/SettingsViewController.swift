@@ -15,4 +15,7 @@ class SettingsViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }

@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
@@ -71,6 +72,10 @@ class MainViewController: UIViewController {
         
     }
     
+    @IBAction func menuButtonTapped(_ sender: Any) {
+        
+    }
+    
     @objc private func updateInfo() {
         guard routeTracker.state == .tracking else { return }
         presentInfo()
@@ -92,6 +97,8 @@ class MainViewController: UIViewController {
         routeTracker.delegate = self
         
         setupMapView()
+        setupMenu()
+        setupFonts()
         setupTimer()
     }
     
@@ -110,6 +117,22 @@ class MainViewController: UIViewController {
     private func setupTimer() {
         updateTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateInfo), userInfo: nil, repeats: true)
         updateTimer.fire()
+    }
+    
+    private func setupFonts() {
+        speedLabel.font = .rounded(ofSize: speedLabel.font.pointSize, weight: .bold)
+        distanceLabel.font = .rounded(ofSize: distanceLabel.font.pointSize, weight: .bold)
+        timeLabel.font = .rounded(ofSize: timeLabel.font.pointSize, weight: .bold)
+    }
+    
+    private func setupMenu() {
+        var actions: [UIAction] = []
+        actions.append(UIAction(title: "Settings", image: UIImage(systemName: "gearshape.fill"), handler: { _ in self.openSettings() }))
+        actions.append(UIAction(title: "Routes", image: UIImage(systemName: "list.bullet"), handler: { _ in self.openRoutes() }))
+        
+        let menu = UIMenu(children: actions)
+        menuButton.menu = menu
+        menuButton.showsMenuAsPrimaryAction = true
     }
     
     private func showErrorMessage(msg: String) {
@@ -154,6 +177,17 @@ class MainViewController: UIViewController {
 //        avgSpeedLabel.text = String(avgSpeed.round(to: 1)) + " " + speedMeasureUnitText
     }
     
+    private func openSettings() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var settingsNC = storyboard.instantiateViewController(identifier: "SettingsNC")
+        present(settingsNC, animated: true)
+    }
+    
+    private func openRoutes() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var routesNC = storyboard.instantiateViewController(identifier: "RoutesNC")
+        present(routesNC, animated: true)
+    }
 }
 
 // MARK: - Route tracker delegate
