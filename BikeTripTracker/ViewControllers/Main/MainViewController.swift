@@ -60,6 +60,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func locationButtonTapped(_ sender: Any) {
+        let status = routeTracker.locationManager.authorizationStatus
+        guard status != .denied, status != .restricted else {
+            showErrorMessage(msg: "Allow access to your location.")
+            return
+        }
         
         isLocationTracking.toggle()
         
