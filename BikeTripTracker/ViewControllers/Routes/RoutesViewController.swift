@@ -42,9 +42,11 @@ class RoutesViewController: UIViewController {
             let monthTitle = formatter.monthSymbols[components.month! - 1]
             let year = components.year!
             let sortedRoutes = routes.sorted { $0.date > $1.date }
+            let totalDistance = routes.reduce(0, { $0 + $1.distance })
             
             let routesRow = RoutesRow(title: "\(monthTitle) \(year)",
-                                      monthNumber: components.month!, routes: sortedRoutes)
+                                      monthNumber: components.month!,
+                                      totalDistance: totalDistance, routes: sortedRoutes)
             
             self.routes.append(routesRow)
         }
@@ -108,9 +110,19 @@ extension RoutesViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        routes[section].title
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = RoutesTableViewHeader(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        view.route = self.routes[section]
+        return view
     }
+    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        routes[section].title
+//    }
+//    
+//    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+//        String(routes[section].totalDistance)
+//    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in

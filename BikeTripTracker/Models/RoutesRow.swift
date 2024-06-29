@@ -10,5 +10,6 @@ import Foundation
 struct RoutesRow {
     var title: String
     var monthNumber: Int
+    var totalDistance: Double
     var routes: [RouteModel]
 }

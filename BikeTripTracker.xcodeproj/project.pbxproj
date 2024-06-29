@@ -43,6 +43,7 @@
 		45F4E17B2BF3D4E00091DBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F4E17A2BF3D4E00091DBF3 /* Assets.xcassets */; };
 		45F4E17E2BF3D4E00091DBF3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 45F4E17D2BF3D4E00091DBF3 /* Base */; };
 		7ACE9A3E2C1EF8E400646D4C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE9A3D2C1EF8E400646D4C /* UIFont.swift */; };
+		7AD72B402C30019200B66719 /* RoutesTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD72B3F2C30019200B66719 /* RoutesTableViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		45F4E17D2BF3D4E00091DBF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45F4E17F2BF3D4E00091DBF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ACE9A3D2C1EF8E400646D4C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		7AD72B3F2C30019200B66719 /* RoutesTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesTableViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			children = (
 				45908B6C2BFA7F120074F361 /* RoutesViewController.swift */,
 				457156792BFB32D500BCBF8B /* RouteDetailViewController.swift */,
+				7AD72B3F2C30019200B66719 /* RoutesTableViewHeader.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				45F4E16F2BF3D4DE0091DBF3 /* AppDelegate.swift in Sources */,
 				4571567E2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift in Sources */,
 				45D2A8062C09A815008DB7AA /* RoutesRow.swift in Sources */,
+				7AD72B402C30019200B66719 /* RoutesTableViewHeader.swift in Sources */,
 				45B6EC842BFCC6A300604A5E /* AppearanceViewController.swift in Sources */,
 				45908B672BFA746A0074F361 /* LocationEntity+CoreDataClass.swift in Sources */,
 				45908B642BFA746A0074F361 /* RouteEntity+CoreDataClass.swift in Sources */,
