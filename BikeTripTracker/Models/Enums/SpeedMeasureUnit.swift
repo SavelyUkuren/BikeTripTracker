@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SpeedMeasureUnit: Int {
-    case kilometersPerHour
-    case metersPerSecond
+enum SpeedMeasureUnit: String, CaseIterable {
+    case kilometersPerHour = "km/h"
+    case metersPerSecond = "m/s"
 }

@@ -53,10 +53,14 @@ class Settings {
         let appearance = AppearanceMode(rawValue: UserDefaults.standard.integer(forKey: Keys.appearance.rawValue)) ?? .system
         self.appearance = appearance
         
-        let speedMeasureUnit = SpeedMeasureUnit(rawValue: UserDefaults.standard.integer(forKey: Keys.speedMeasureUnit.rawValue)) ?? .kilometersPerHour
-        self.speedMeasureUnit = speedMeasureUnit
+        if let savedSpeedMesureUnit = UserDefaults.standard.string(forKey: Keys.speedMeasureUnit.rawValue) {
+            let speedMeasureUnit = SpeedMeasureUnit(rawValue:  savedSpeedMesureUnit) ?? .kilometersPerHour
+            self.speedMeasureUnit = speedMeasureUnit
+        }
         
-        let distanceMeasureUnit = DistanceMeasureUnit(rawValue: UserDefaults.standard.integer(forKey: Keys.distanceMeasureUnit.rawValue)) ?? .kilometers
-        self.distanceMeasureUnit = distanceMeasureUnit
+        if let savedDistanceMeasureUnit = UserDefaults.standard.string(forKey: Keys.distanceMeasureUnit.rawValue) {
+            let distanceMeasureUnit = DistanceMeasureUnit(rawValue: savedDistanceMeasureUnit) ?? .kilometers
+            self.distanceMeasureUnit = distanceMeasureUnit
+        }
     }
 }

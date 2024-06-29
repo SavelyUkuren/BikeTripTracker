@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum DistanceMeasureUnit: Int {
-    case kilometers, meters 
+enum DistanceMeasureUnit: String, CaseIterable {
+    case kilometers = "km"
+    case meters = "m"
 }

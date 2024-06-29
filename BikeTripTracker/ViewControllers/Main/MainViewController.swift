@@ -25,13 +25,6 @@ class MainViewController: UIViewController {
     private var settings = Settings.shared
     private var updateTimer: Timer!
     
-    private var speedMeasureUnitText: String {
-        return Settings.shared.speedMeasureUnit == .metersPerSecond ? "m/s" : "km/h"
-    }
-    private var distanceMeasureUnit: String {
-        return Settings.shared.distanceMeasureUnit == .meters ? "m" : "km"
-    }
-    
     private var isLocationTracking = false {
         didSet {
             locationButton.setImage(UIImage(systemName: isLocationTracking ? "location.fill" : "location"), for: .normal)
@@ -167,8 +160,8 @@ class MainViewController: UIViewController {
 
         let distance = settings.distanceMeasureUnit == .meters ? routeTracker.distance : routeTracker.distance / 1000
 
-        speedLabel.text = String(speed.round(to: 1)) + " " + speedMeasureUnitText
-        distanceLabel.text = String(distance.round(to: 2)) + " " + distanceMeasureUnit
+        speedLabel.text = String(speed.round(to: 1)) + " " + Settings.shared.speedMeasureUnit.rawValue
+        distanceLabel.text = String(distance.round(to: 2)) + " " + Settings.shared.distanceMeasureUnit.rawValue
 
         let time = formatTime(seconds: routeTracker.timeDuration)
         timeLabel.text = time
@@ -179,13 +172,13 @@ class MainViewController: UIViewController {
     
     private func openSettings() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var settingsNC = storyboard.instantiateViewController(identifier: "SettingsNC")
+        let settingsNC = storyboard.instantiateViewController(identifier: "SettingsNC")
         present(settingsNC, animated: true)
     }
     
     private func openRoutes() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var routesNC = storyboard.instantiateViewController(identifier: "RoutesNC")
+        let routesNC = storyboard.instantiateViewController(identifier: "RoutesNC")
         present(routesNC, animated: true)
     }
 }
@@ -224,8 +217,8 @@ extension MainViewController: RouteTrackerDelegate {
         mapView.overlays.forEach {
             mapView.removeOverlay($0)
         }
-        speedLabel.text = "0 " + speedMeasureUnitText
-        distanceLabel.text = "0 " + distanceMeasureUnit
+        speedLabel.text = "0 " + Settings.shared.speedMeasureUnit.rawValue
+        distanceLabel.text = "0 " + Settings.shared.distanceMeasureUnit.rawValue
         timeLabel.text = "0s"
     }
 

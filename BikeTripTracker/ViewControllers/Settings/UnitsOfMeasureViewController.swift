@@ -13,7 +13,6 @@ class UnitsOfMeasureViewController: UITableViewController {
         case speed, distance
     }
     
-    
     @IBOutlet var unitOfMeasureTableView: UITableView!
     
     override func viewDidLoad() {
@@ -28,12 +27,13 @@ class UnitsOfMeasureViewController: UITableViewController {
     }
     
     private func setupCells() {
-        let speedIndexPath = IndexPath(row: Settings.shared.speedMeasureUnit.rawValue,
+        let speedIndexInEnum = SpeedMeasureUnit.allCases.firstIndex(of: Settings.shared.speedMeasureUnit) ?? 0
+        let speedIndexPath = IndexPath(row: speedIndexInEnum,
                                        section: UnitsOfMeasureSections.speed.rawValue)
         unitOfMeasureTableView.cellForRow(at: speedIndexPath)?.accessoryType = .checkmark
         
-        
-        let distaneIndexPath = IndexPath(row: Settings.shared.distanceMeasureUnit.rawValue,
+        let distanceIndexInEnum = DistanceMeasureUnit.allCases.firstIndex(of: Settings.shared.distanceMeasureUnit) ?? 0
+        let distaneIndexPath = IndexPath(row: distanceIndexInEnum,
                                          section: UnitsOfMeasureSections.distance.rawValue)
         unitOfMeasureTableView.cellForRow(at: distaneIndexPath)?.accessoryType = .checkmark
     }
@@ -61,11 +61,11 @@ class UnitsOfMeasureViewController: UITableViewController {
         switch indexPath.section {
         case UnitsOfMeasureSections.speed.rawValue:
             clearCellFromCheckmarks(tableView,  UnitsOfMeasureSections.speed)
-            Settings.shared.speedMeasureUnit = SpeedMeasureUnit(rawValue: indexPath.row) ?? .kilometersPerHour
+            Settings.shared.speedMeasureUnit = SpeedMeasureUnit.allCases[indexPath.row]
             break
         case UnitsOfMeasureSections.distance.rawValue:
             clearCellFromCheckmarks(tableView,  UnitsOfMeasureSections.distance)
-            Settings.shared.distanceMeasureUnit = DistanceMeasureUnit(rawValue: indexPath.row) ?? .kilometers
+            Settings.shared.distanceMeasureUnit = DistanceMeasureUnit.allCases[indexPath.row]
             break
         default:
             break
