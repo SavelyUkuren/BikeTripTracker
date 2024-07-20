@@ -14,7 +14,7 @@ class RoutesViewController: UIViewController {
     private var routes: [RoutesRow] = []
     private var routeDetailIsLoaded = false
     private var selectedRouteCellIndex: IndexPath?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,12 +45,20 @@ class RoutesViewController: UIViewController {
             let totalDistance = routes.reduce(0, { $0 + $1.distance })
             
             let routesRow = RoutesRow(title: "\(monthTitle) \(year)",
-                                      monthNumber: components.month!,
+									  monthNumber: components.month!, year: year,
                                       totalDistance: totalDistance, routes: sortedRoutes)
             
             self.routes.append(routesRow)
         }
-//        routes = routes.sorted { $0.date > $1.date }
+		
+		// Sorting from the last route added to the first route added
+		routes = routes.sorted(by: { (route1, route2) -> Bool in
+			if route1.year == route2.year {
+				return route1.monthNumber > route2.monthNumber
+			} else {
+				return route1.year > route2.year
+			}
+		})
         
     }
     
@@ -115,14 +123,6 @@ extension RoutesViewController: UITableViewDelegate, UITableViewDataSource {
         view.route = self.routes[section]
         return view
     }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        routes[section].title
-//    }
-//    
-//    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-//        String(routes[section].totalDistance)
-//    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in

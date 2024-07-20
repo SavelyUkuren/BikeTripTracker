@@ -50,7 +50,7 @@ class RouteTracker: NSObject {
     func start() {
         
         guard let startCoordinate = locationManager.location?.coordinate else {
-            delegate?.errorOccured(msg: "Can't access to your location!")
+            delegate?.errorOccured(msg: NSLocalizedString("Can't access to your location!", comment: ""))
             return
         }
         

@@ -44,13 +44,22 @@ func formatTime(seconds: Int) -> String {
     let minutes = (seconds % 3600) / 60
     let remainingSeconds = seconds % 60
 
-    if hours > 0 {
-        return "\(hours)h \(minutes)m \(remainingSeconds)s"
-    } else if minutes > 0 {
-        return "\(minutes)m \(remainingSeconds)s"
-    } else {
-        return "\(remainingSeconds)s"
-    }
+	let hS = NSLocalizedString("t_h", comment: "Hours")
+	let mS = NSLocalizedString("t_m", comment: "Minutes")
+	let sS = NSLocalizedString("t_s", comment: "Seconds")
+	
+	var output = ""
+
+	if hours > 0 {
+		output += "\(hours)\(hS) "
+	}
+	if minutes > 0 {
+		output += "\(minutes)\(mS) "
+	}
+	
+	output += "\(remainingSeconds)\(sS)"
+	
+	return output
 }
 
 func routeFilter(lastCoord: CLLocationCoordinate2D, newCoord: CLLocationCoordinate2D) -> Bool {

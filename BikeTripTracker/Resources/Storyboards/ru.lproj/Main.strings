@@ -1,0 +1,111 @@
+
+/* Class = "UILabel"; text = "Speed"; ObjectID = "2js-I1-axW"; */
+"2js-I1-axW.text" = "Скорость";
+
+/* Class = "UILabel"; text = "km"; ObjectID = "4uJ-OV-fi6"; */
+"4uJ-OV-fi6.text" = "км";
+
+/* Class = "UILabel"; text = "m"; ObjectID = "69L-A7-WkV"; */
+"69L-A7-WkV.text" = "м";
+
+/* Class = "UILabel"; text = "0 km/h"; ObjectID = "7EI-QA-j7O"; */
+"7EI-QA-j7O.text" = "0 км/ч";
+
+/* Class = "UILabel"; text = "m/s"; ObjectID = "DiV-pk-800"; */
+"DiV-pk-800.text" = "м/с";
+
+/* Class = "UILabel"; text = "Dark"; ObjectID = "E6U-X1-Ceg"; */
+"E6U-X1-Ceg.text" = "Темная";
+
+/* Class = "UILabel"; text = "Average speed"; ObjectID = "EmQ-3w-Bl9"; */
+"EmQ-3w-Bl9.text" = "Средняя скорость";
+
+/* Class = "UITableViewSection"; headerTitle = "Distance"; ObjectID = "F3R-FJ-xng"; */
+"F3R-FJ-xng.headerTitle" = "Расстояние";
+
+/* Class = "UITableViewSection"; headerTitle = "Speed"; ObjectID = "G13-Pe-cE4"; */
+"G13-Pe-cE4.headerTitle" = "Скорость";
+
+/* Class = "UILabel"; text = "0 km/h"; ObjectID = "IGq-Zy-mHX"; */
+"IGq-Zy-mHX.text" = "0 km/h";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "Q3J-wM-XG3"; */
+"Q3J-wM-XG3.title" = "Настройки";
+
+/* Class = "UILabel"; text = "0h 0m 0s"; ObjectID = "QAp-JA-37R"; */
+"QAp-JA-37R.text" = "0ч 0м 0с";
+
+/* Class = "UILabel"; text = "0 km"; ObjectID = "RWT-OU-icS"; */
+"RWT-OU-icS.text" = "0 км";
+
+/* Class = "UILabel"; text = "Map"; ObjectID = "RaD-AR-jvS"; */
+"RaD-AR-jvS.text" = "Карта";
+
+/* Class = "UILabel"; text = "Distance"; ObjectID = "SDQ-c6-2T6"; */
+"SDQ-c6-2T6.text" = "Расстояние";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xv3-Mi-6vM"; */
+"Xv3-Mi-6vM.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Units of measure"; ObjectID = "Z5i-hm-f7p"; */
+"Z5i-hm-f7p.text" = "Единицы измерения";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Zqe-ei-LTx"; */
+"Zqe-ei-LTx.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0 km/h"; ObjectID = "aHQ-KG-p2J"; */
+"aHQ-KG-p2J.text" = "0 км/ч";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bzX-5K-wi5"; */
+"bzX-5K-wi5.normalTitle" = "Button";
+
+/* Class = "UITableViewSection"; headerTitle = "Appearance"; ObjectID = "d9N-fn-iz5"; */
+"d9N-fn-iz5.headerTitle" = "Внешний вид";
+
+/* Class = "UILabel"; text = "Appearance"; ObjectID = "ea3-Xz-lOI"; */
+"ea3-Xz-lOI.text" = "Внешний вид";
+
+/* Class = "UILabel"; text = "0s"; ObjectID = "elu-HK-nqp"; */
+"elu-HK-nqp.text" = "0с";
+
+/* Class = "UILabel"; text = "Distance"; ObjectID = "gRV-EA-YKp"; */
+"gRV-EA-YKp.text" = "Расстояние";
+
+/* Class = "UILabel"; text = "0 km"; ObjectID = "jpP-OO-zv7"; */
+"jpP-OO-zv7.text" = "0 км";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "kBZ-E9-IAX"; */
+"kBZ-E9-IAX.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "km/h"; ObjectID = "kpG-LD-EZf"; */
+"kpG-LD-EZf.text" = "км/ч";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "lik-J9-55h"; */
+"lik-J9-55h.text" = "Время";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "ppf-BQ-iZz"; */
+"ppf-BQ-iZz.text" = "Время";
+
+/* Class = "UILabel"; text = "Light"; ObjectID = "qIo-1Z-E3h"; */
+"qIo-1Z-E3h.text" = "Светлая";
+
+/* Class = "UINavigationItem"; title = "Routes"; ObjectID = "qWu-AV-Lhj"; */
+"qWu-AV-Lhj.title" = "Маршруты";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "rvc-Sk-o49"; */
+"rvc-Sk-o49.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "skm-at-sHO"; */
+"skm-at-sHO.text" = "Дата";
+
+/* Class = "UILabel"; text = "System"; ObjectID = "tPE-03-o13"; */
+"tPE-03-o13.text" = "Системная";
+
+/* Class = "UILabel"; text = "Distance"; ObjectID = "vsX-gp-26P"; */
+"vsX-gp-26P.text" = "Расстояние";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "y4a-sc-bU1"; */
+"y4a-sc-bU1.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Max speed"; ObjectID = "ygK-v7-R0W"; */
+"ygK-v7-R0W.text" = "Максимальная скорость";

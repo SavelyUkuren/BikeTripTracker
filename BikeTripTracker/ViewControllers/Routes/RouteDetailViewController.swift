@@ -22,11 +22,13 @@ class RouteDetailViewController: UIViewController {
     @IBOutlet weak var mapViewPlacement: UIView!
     private var mapView: MKMapView?
     
-//    private var routeTracker = RouteTracker.shared
     private var settings = Settings.shared
     private var coordinates: [RoutePolyline] = []
     
     private var startRenderTime = Date()
+	
+	private var speedMUStr: String { NSLocalizedString(Settings.shared.speedMeasureUnit.rawValue, comment: "") }
+	private var distanceMUStr: String = NSLocalizedString(Settings.shared.distanceMeasureUnit.rawValue, comment: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,18 +56,15 @@ class RouteDetailViewController: UIViewController {
             return
         }
         
-        let speedMeasureUnitText = settings.speedMeasureUnit == .metersPerSecond ? "m/s" : "km/h"
-        let distanceMeasureUnit = settings.distanceMeasureUnit == .meters ? "m" : "km"
-        
         let avgSpeed = settings.speedMeasureUnit == .metersPerSecond ? route.avgSpeed : route.avgSpeed * 3.6
         let maxSpeed = settings.speedMeasureUnit == .metersPerSecond ? route.maxSpeed : route.maxSpeed * 3.6
         
         let distance = settings.distanceMeasureUnit == .meters ? route.distance : route.distance / 1000
         
-        distanceLabel.text = String(distance.round(to: 2)) + " " + distanceMeasureUnit
-        averageSpeedLabel.text = String(avgSpeed.round(to: 1)) + " " + speedMeasureUnitText
+        distanceLabel.text = String(distance.round(to: 2)) + " " + distanceMUStr
+        averageSpeedLabel.text = String(avgSpeed.round(to: 1)) + " " + speedMUStr
         timeLabel.text = formatTime(seconds: route.travelTime)
-        maxSpeedLabel.text = String(maxSpeed.round(to: 1)) + " " + speedMeasureUnitText
+        maxSpeedLabel.text = String(maxSpeed.round(to: 1)) + " " + speedMUStr
         
     }
     
@@ -141,16 +140,5 @@ extension RouteDetailViewController: MKMapViewDelegate {
         render.lineWidth = 5
         
         return render
-    }
-    
-    func mapViewWillStartRenderingMap(_ mapView: MKMapView) {
-        startRenderTime = Date()
-    }
-    
-    func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
-        let endRenderTime = Date()
-        let renderTime = endRenderTime.timeIntervalSince(startRenderTime) * 1000 // Convert to milliseconds
-        print (renderTime)
-        
     }
 }

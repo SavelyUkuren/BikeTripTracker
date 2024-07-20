@@ -42,6 +42,9 @@
 		45F4E1792BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45F4E1772BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld */; };
 		45F4E17B2BF3D4E00091DBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F4E17A2BF3D4E00091DBF3 /* Assets.xcassets */; };
 		45F4E17E2BF3D4E00091DBF3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 45F4E17D2BF3D4E00091DBF3 /* Base */; };
+		7ABC391C2C4A93500076866B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7ABC391B2C4A93500076866B /* Localizable.xcstrings */; };
+		7ABC391E2C4A94DD0076866B /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC391D2C4A94DD0076866B /* UILabel.swift */; };
+		7ABC39212C4BB7140076866B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F4E1742BF3D4DE0091DBF3 /* Main.storyboard */; };
 		7ACE9A3E2C1EF8E400646D4C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE9A3D2C1EF8E400646D4C /* UIFont.swift */; };
 		7AD72B402C30019200B66719 /* RoutesTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD72B3F2C30019200B66719 /* RoutesTableViewHeader.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +87,11 @@
 		45F4E17A2BF3D4E00091DBF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45F4E17D2BF3D4E00091DBF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45F4E17F2BF3D4E00091DBF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ABC39192C4A92AD0076866B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		7ABC391A2C4A92AE0076866B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7ABC391B2C4A93500076866B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		7ABC391D2C4A94DD0076866B /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		7ABC39202C4BB7130076866B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		7ACE9A3D2C1EF8E400646D4C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7AD72B3F2C30019200B66719 /* RoutesTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesTableViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +143,7 @@
 				45908B6E2BFA82070074F361 /* RouteEntity.swift */,
 				45908B702BFA82B00074F361 /* LocationEntity.swift */,
 				7ACE9A3D2C1EF8E400646D4C /* UIFont.swift */,
+				7ABC391D2C4A94DD0076866B /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +277,7 @@
 			children = (
 				45F4E17A2BF3D4E00091DBF3 /* Assets.xcassets */,
 				45F4E1772BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld */,
+				7ABC391B2C4A93500076866B /* Localizable.xcstrings */,
 				45F4E1872BF3D5930091DBF3 /* Storyboards */,
 			);
 			path = Resources;
@@ -326,6 +336,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 45F4E1622BF3D4DE0091DBF3;
 			packageReferences = (
@@ -345,7 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45F4E17B2BF3D4E00091DBF3 /* Assets.xcassets in Resources */,
+				7ABC39212C4BB7140076866B /* Main.storyboard in Resources */,
 				45F4E17E2BF3D4E00091DBF3 /* Base in Resources */,
+				7ABC391C2C4A93500076866B /* Localizable.xcstrings in Resources */,
 				45F4E1762BF3D4DE0091DBF3 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +395,7 @@
 				45908B6D2BFA7F120074F361 /* RoutesViewController.swift in Sources */,
 				45908B652BFA746A0074F361 /* LocationEntity+CoreDataProperties.swift in Sources */,
 				4529E5232BF4EF4A008B6388 /* RouteTrackerDelegate.swift in Sources */,
+				7ABC391E2C4A94DD0076866B /* UILabel.swift in Sources */,
 				4571567A2BFB32D500BCBF8B /* RouteDetailViewController.swift in Sources */,
 				45B6EC882BFCC73300604A5E /* Settings.swift in Sources */,
 				45F4E1792BF3D4DE0091DBF3 /* BikeTripTracker.xcdatamodeld in Sources */,
@@ -399,6 +413,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				45F4E1752BF3D4DE0091DBF3 /* Base */,
+				7ABC39192C4A92AD0076866B /* ru */,
+				7ABC39202C4BB7130076866B /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -407,6 +423,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				45F4E17D2BF3D4E00091DBF3 /* Base */,
+				7ABC391A2C4A92AE0076866B /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -419,6 +436,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -482,6 +500,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

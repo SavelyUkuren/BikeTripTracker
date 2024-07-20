@@ -24,6 +24,9 @@ class MainViewController: UIViewController {
     private var routeTracker = RouteTracker()
     private var settings = Settings.shared
     private var updateTimer: Timer!
+	
+	private var speedMUStr: String { NSLocalizedString(Settings.shared.speedMeasureUnit.rawValue, comment: "") }
+	private var distanceMUStr: String = NSLocalizedString(Settings.shared.distanceMeasureUnit.rawValue, comment: "")
     
     private var isLocationTracking = false {
         didSet {
@@ -49,7 +52,7 @@ class MainViewController: UIViewController {
         }
 
         let changeStartButtonIcon = routeTracker.state == .idle || routeTracker.state == .pause
-        playPauseButton.setImage(UIImage(systemName: changeStartButtonIcon ? "play.fill" : "pause.fill"), for: .normal)
+		playPauseButton.setImage(UIImage(systemName: changeStartButtonIcon ? "play.fill" : "pause.fill"), for: .normal)
     }
     
     @IBAction func stopButtonTapped(_ sender: Any) {
@@ -62,7 +65,7 @@ class MainViewController: UIViewController {
     @IBAction func locationButtonTapped(_ sender: Any) {
         let status = routeTracker.locationManager.authorizationStatus
         guard status != .denied, status != .restricted else {
-            showErrorMessage(msg: "Allow access to your location.")
+            showErrorMessage(msg: NSLocalizedString("Allow access to your location.", comment: ""))
             return
         }
         
@@ -125,8 +128,8 @@ class MainViewController: UIViewController {
     
     private func setupMenu() {
         var actions: [UIAction] = []
-        actions.append(UIAction(title: "Settings", image: UIImage(systemName: "gearshape.fill"), handler: { _ in self.openSettings() }))
-        actions.append(UIAction(title: "Routes", image: UIImage(systemName: "list.bullet"), handler: { _ in self.openRoutes() }))
+        actions.append(UIAction(title: NSLocalizedString("Settings", comment: ""), image: UIImage(systemName: "gearshape.fill"), handler: { _ in self.openSettings() }))
+        actions.append(UIAction(title: NSLocalizedString("Routes", comment: ""), image: UIImage(systemName: "list.bullet"), handler: { _ in self.openRoutes() }))
         
         let menu = UIMenu(children: actions)
         menuButton.menu = menu
@@ -143,12 +146,13 @@ class MainViewController: UIViewController {
     }
     
     private func showAlertIfStopButtonTapped(yesAction: @escaping (UIAlertAction) -> ()) {
-        let alert = UIAlertController(title: "Stop tracking",
-                                      message: "Do you really want to finish the route?", preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Stop tracking", comment: ""),
+                                      message: NSLocalizedString("Do you really want to finish the route?", comment: ""),
+									  preferredStyle: .alert)
 
-        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: yesAction)
+        let yesAction = UIAlertAction(title: NSLocalizedString("Yes", comment: ""), style: .default, handler: yesAction)
 
-        let noAction = UIAlertAction(title: "No", style: .default)
+        let noAction = UIAlertAction(title: NSLocalizedString("No", comment: ""), style: .default)
 
         alert.addAction(noAction)
         alert.addAction(yesAction)
@@ -160,24 +164,20 @@ class MainViewController: UIViewController {
 
         // if speed measure unit will be km/s then convert m/s to km/s by multiply on 3.6
         let speed = settings.speedMeasureUnit == .metersPerSecond ? routeTracker.speed : routeTracker.speed * 3.6
-//        let avgSpeed = settings.speedMeasureUnit == .metersPerSecond ? routeTracker.avgSpeed : routeTracker.avgSpeed * 3.6
-//        let maxSpeed = settings.speedMeasureUnit == .metersPerSecond ? routeTracker.maxSpeed : routeTracker.maxSpeed * 3.6
 
         let distance = settings.distanceMeasureUnit == .meters ? routeTracker.distance : routeTracker.distance / 1000
-
-        speedLabel.text = String(speed.round(to: 1)) + " " + Settings.shared.speedMeasureUnit.rawValue
-        distanceLabel.text = String(distance.round(to: 2)) + " " + Settings.shared.distanceMeasureUnit.rawValue
+		
+        speedLabel.text = String(speed.round(to: 1)) + " " + speedMUStr
+        distanceLabel.text = String(distance.round(to: 2)) + " " + distanceMUStr
 
         let time = formatTime(seconds: routeTracker.timeDuration)
         timeLabel.text = time
-
-//        maxSpeedLabel.text = String(maxSpeed.round(to: 1)) + " " + speedMeasureUnitText
-//        avgSpeedLabel.text = String(avgSpeed.round(to: 1)) + " " + speedMeasureUnitText
     }
     
     private func openSettings() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let settingsNC = storyboard.instantiateViewController(identifier: "SettingsNC")
+		settingsNC.sheetPresentationController?.detents = [.medium()]
         present(settingsNC, animated: true)
     }
     
@@ -222,9 +222,9 @@ extension MainViewController: RouteTrackerDelegate {
         mapView.overlays.forEach {
             mapView.removeOverlay($0)
         }
-        speedLabel.text = "0 " + Settings.shared.speedMeasureUnit.rawValue
-        distanceLabel.text = "0 " + Settings.shared.distanceMeasureUnit.rawValue
-        timeLabel.text = "0s"
+        speedLabel.text = "0 " + speedMUStr
+        distanceLabel.text = "0 " + distanceMUStr
+        timeLabel.text = formatTime(seconds: 0)//"0" + secondsMUStr
     }
 
 }

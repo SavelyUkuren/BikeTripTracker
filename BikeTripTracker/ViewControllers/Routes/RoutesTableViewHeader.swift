@@ -18,6 +18,8 @@ class RoutesTableViewHeader: UIView {
     var titleLabel = UILabel()
     var totalDistanceLabel = UILabel()
     
+	private var distanceMUStr: String = NSLocalizedString(Settings.shared.distanceMeasureUnit.rawValue, comment: "")
+	
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -66,6 +68,6 @@ class RoutesTableViewHeader: UIView {
         titleLabel.text = route.title
         
         let distance = Settings.shared.distanceMeasureUnit == .kilometers ? route.totalDistance / 1000 : route.totalDistance
-        totalDistanceLabel.text = String(distance.round(to: 2)) + " \(Settings.shared.distanceMeasureUnit.rawValue)"
+        totalDistanceLabel.text = String(distance.round(to: 2)) + " \(distanceMUStr)"
     }
 }
