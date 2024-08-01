@@ -247,6 +247,38 @@
             </objects>
             <point key="canvasLocation" x="2161.5384615384614" y="-4.2654028436018958"/>
         </scene>
+        <!--Test View Controller-->
+        <scene sceneID="5mQ-eH-f89">
+            <objects>
+                <viewController id="zJn-jv-obk" customClass="TestViewController" customModule="BikeTripTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mQH-iu-5Ts">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g58-c2-l5e">
+                                <rect key="frame" x="16" y="79" width="358" height="300"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Vad-jQ-MGt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gzt-pM-5cW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g58-c2-l5e" firstAttribute="leading" secondItem="Gzt-pM-5cW" secondAttribute="leading" constant="16" id="0YJ-MT-GCv"/>
+                            <constraint firstItem="g58-c2-l5e" firstAttribute="top" secondItem="Gzt-pM-5cW" secondAttribute="top" constant="32" id="71w-0L-upP"/>
+                            <constraint firstItem="Gzt-pM-5cW" firstAttribute="trailing" secondItem="g58-c2-l5e" secondAttribute="trailing" constant="16" id="TxJ-yW-hEe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="g58-c2-l5e" id="lGB-dw-VQv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="umA-qS-JLZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2076.9230769230767" y="812.55924170616106"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="GiL-qJ-ULL">
             <objects>
@@ -574,7 +606,7 @@
                                 <rect key="frame" x="0.0" y="91" width="390" height="719"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXl-10-yf0">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-vP-NUm">
                                                 <rect key="frame" x="16" y="16" width="358" height="110"/>
@@ -735,7 +767,7 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaD-AR-jvS">
-                                                <rect key="frame" x="31.999999999999996" y="284" width="48.666666666666657" height="28.666666666666686"/>
+                                                <rect key="frame" x="31.999999999999996" y="561" width="48.666666666666657" height="28.666666666666629"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -744,10 +776,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7c-mW-5C7">
-                                                <rect key="frame" x="16" y="328.66666666666669" width="358" height="300.00000000000006"/>
+                                                <rect key="frame" x="16" y="605.66666666666663" width="358" height="300"/>
                                                 <subviews>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="07W-t3-lql">
-                                                        <rect key="frame" x="169" y="139.99999999999994" width="20" height="20"/>
+                                                        <rect key="frame" x="169" y="140" width="20" height="20"/>
                                                     </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
@@ -762,21 +794,63 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Its-kX-EGl">
+                                                <rect key="frame" x="16" y="329" width="358" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSv-oP-QKk">
+                                                        <rect key="frame" x="146.66666666666666" y="90" width="64.666666666666657" height="20.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationKey" value="No data!"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="5Oh-LH-fGP"/>
+                                                    <constraint firstItem="BSv-oP-QKk" firstAttribute="centerX" secondItem="Its-kX-EGl" secondAttribute="centerX" id="7FS-kc-qe9"/>
+                                                    <constraint firstItem="BSv-oP-QKk" firstAttribute="centerY" secondItem="Its-kX-EGl" secondAttribute="centerY" id="cCU-pU-LPN"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1z-F4-Sab">
+                                                <rect key="frame" x="32" y="284" width="136.33333333333334" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="29" id="t19-bH-0gF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationKey" value="Speed chart"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Its-kX-EGl" firstAttribute="top" secondItem="Q1z-F4-Sab" secondAttribute="bottom" constant="16" id="3Ba-Kw-zr5"/>
+                                            <constraint firstItem="RaD-AR-jvS" firstAttribute="top" secondItem="Its-kX-EGl" secondAttribute="bottom" constant="32" id="44F-kI-K9H"/>
                                             <constraint firstItem="L7c-mW-5C7" firstAttribute="top" secondItem="RaD-AR-jvS" secondAttribute="bottom" constant="16" id="AZ2-7T-3vN"/>
+                                            <constraint firstAttribute="trailing" secondItem="Its-kX-EGl" secondAttribute="trailing" constant="16" id="B2g-Li-fsH"/>
+                                            <constraint firstItem="Q1z-F4-Sab" firstAttribute="top" secondItem="pGD-LD-uaE" secondAttribute="bottom" constant="32" id="Mqw-Kh-vny"/>
                                             <constraint firstAttribute="trailing" secondItem="ViU-vP-NUm" secondAttribute="trailing" constant="16" id="OGB-9k-Ibp"/>
                                             <constraint firstAttribute="trailing" secondItem="L7c-mW-5C7" secondAttribute="trailing" constant="16" id="RSi-sz-LcW"/>
                                             <constraint firstItem="ViU-vP-NUm" firstAttribute="top" secondItem="yXl-10-yf0" secondAttribute="top" constant="16" id="bcO-sN-XgI"/>
                                             <constraint firstAttribute="trailing" secondItem="pGD-LD-uaE" secondAttribute="trailing" constant="16" id="ds9-bK-j7b"/>
+                                            <constraint firstItem="Q1z-F4-Sab" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="32" id="g7s-zN-VXs"/>
                                             <constraint firstItem="RaD-AR-jvS" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="32" id="jCQ-vI-qCg"/>
                                             <constraint firstItem="pGD-LD-uaE" firstAttribute="top" secondItem="ViU-vP-NUm" secondAttribute="bottom" constant="16" id="kkM-oV-bef"/>
-                                            <constraint firstAttribute="height" constant="800" id="kqk-Y3-IKg"/>
+                                            <constraint firstAttribute="height" constant="1000" id="kqk-Y3-IKg"/>
+                                            <constraint firstItem="Its-kX-EGl" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="mcO-aG-B4l"/>
                                             <constraint firstItem="ViU-vP-NUm" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="msc-A1-7J3"/>
                                             <constraint firstItem="pGD-LD-uaE" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="pjY-lE-Ofi"/>
                                             <constraint firstItem="L7c-mW-5C7" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="woe-R0-4Po"/>
-                                            <constraint firstItem="RaD-AR-jvS" firstAttribute="top" secondItem="pGD-LD-uaE" secondAttribute="bottom" constant="32" id="ybl-H2-bUV"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -806,6 +880,8 @@
                         <outlet property="mapViewLoadIndicator" destination="07W-t3-lql" id="zVO-8h-Ee9"/>
                         <outlet property="mapViewPlacement" destination="L7c-mW-5C7" id="mdN-i5-kLy"/>
                         <outlet property="maxSpeedLabel" destination="IGq-Zy-mHX" id="Bag-ZK-2uI"/>
+                        <outlet property="noSpeedChartDataLabel" destination="BSv-oP-QKk" id="hqv-Uy-jKc"/>
+                        <outlet property="speedChartPosView" destination="Its-kX-EGl" id="Tw7-lt-pV3"/>
                         <outlet property="timeLabel" destination="QAp-JA-37R" id="f4W-VL-VpE"/>
                     </connections>
                 </viewController>
@@ -1046,6 +1122,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -39,7 +39,7 @@ class RoutesViewController: UIViewController {
         let formatter = DateFormatter()
         for (components, routes) in groupedRoutes {
             
-            let monthTitle = formatter.monthSymbols[components.month! - 1]
+			let monthTitle = formatter.standaloneMonthSymbols[components.month! - 1]
             let year = components.year!
             let sortedRoutes = routes.sorted { $0.date > $1.date }
             let totalDistance = routes.reduce(0, { $0 + $1.distance })

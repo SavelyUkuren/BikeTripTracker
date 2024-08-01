@@ -47,6 +47,8 @@
 		7ABC39212C4BB7140076866B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F4E1742BF3D4DE0091DBF3 /* Main.storyboard */; };
 		7ACE9A3E2C1EF8E400646D4C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE9A3D2C1EF8E400646D4C /* UIFont.swift */; };
 		7AD72B402C30019200B66719 /* RoutesTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD72B3F2C30019200B66719 /* RoutesTableViewHeader.swift */; };
+		7ADBA54E2C5B8AB4005FB461 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADBA54D2C5B8AB4005FB461 /* LineChart.swift */; };
+		7ADBA5502C5B8B55005FB461 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADBA54F2C5B8B55005FB461 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		7ABC39202C4BB7130076866B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		7ACE9A3D2C1EF8E400646D4C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7AD72B3F2C30019200B66719 /* RoutesTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesTableViewHeader.swift; sourceTree = "<group>"; };
+		7ADBA54D2C5B8AB4005FB461 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		7ADBA54F2C5B8B55005FB461 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,10 +222,12 @@
 		45DA057B2BF4E393007951E7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7ADBA54C2C5B8A99005FB461 /* CustomViews */,
 				45B6EC802BFCC17300604A5E /* Settings */,
 				45B6EC7F2BFCC16500604A5E /* Main */,
 				45B6EC7E2BFCC15C00604A5E /* Routes */,
 				457156762BFA893E00BCBF8B /* TableViewCells */,
+				7ADBA54F2C5B8B55005FB461 /* TestViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -290,6 +296,14 @@
 				45F4E17C2BF3D4E00091DBF3 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7ADBA54C2C5B8A99005FB461 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7ADBA54D2C5B8AB4005FB461 /* LineChart.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,8 +384,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ADBA5502C5B8B55005FB461 /* TestViewController.swift in Sources */,
 				4571567C2BFB8F9200BCBF8B /* HelpfulFunctions.swift in Sources */,
 				45F4E16F2BF3D4DE0091DBF3 /* AppDelegate.swift in Sources */,
+				7ADBA54E2C5B8AB4005FB461 /* LineChart.swift in Sources */,
 				4571567E2BFC7AFE00BCBF8B /* DistanceMeasureUnit.swift in Sources */,
 				45D2A8062C09A815008DB7AA /* RoutesRow.swift in Sources */,
 				7AD72B402C30019200B66719 /* RoutesTableViewHeader.swift in Sources */,

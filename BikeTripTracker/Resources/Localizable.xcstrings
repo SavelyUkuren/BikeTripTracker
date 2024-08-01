@@ -224,6 +224,23 @@
         }
       }
     },
+    "No data!" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No data!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет данных!"
+          }
+        }
+      }
+    },
     "Routes" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -271,6 +288,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Скорость"
+          }
+        }
+      }
+    },
+    "Speed chart" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speed chart"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "График скорости"
           }
         }
       }

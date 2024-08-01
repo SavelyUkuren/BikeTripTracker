@@ -1,4 +1,7 @@
 
+/* Class = "UILabel"; text = "Speed"; ObjectID = "Q1z-F4-Sab"; */
+"Q1z-F4-Sab.text" = "График скорости";
+
 /* Class = "UILabel"; text = "Speed"; ObjectID = "2js-I1-axW"; */
 "2js-I1-axW.text" = "Скорость";
 
