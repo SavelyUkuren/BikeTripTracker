@@ -12,17 +12,18 @@ import CoreLocation
 let maxDistance: CLLocationDistance = 40.0 //Threshold to prevent sudden changes in location (m/s)
 
 func colorBySpeed(_ speed: Double) -> UIColor {
-    var color = UIColor.systemGreen
+    var color = UIColor.systemBlue
+	// Rework in the future
     // km/h
-    if speed > 0 && speed < kilometerPerHour(10) {
-        color = .systemBlue
-    } else if speed > kilometerPerHour(10) && speed < kilometerPerHour(30) {
-        color = .systemGreen
-    } else if speed > kilometerPerHour(30) && speed < kilometerPerHour(45) {
-        color = .systemOrange
-    } else {
-        color = .systemRed
-    }
+//    if speed > 0 && speed < kilometerPerHour(10) {
+//        color = .systemBlue
+//    } else if speed > kilometerPerHour(15) && speed < kilometerPerHour(25) {
+//        color = .systemGreen
+//    } else if speed > kilometerPerHour(25) && speed < kilometerPerHour(35) {
+//        color = .systemOrange
+//    } else {
+//        color = .systemRed
+//    }
     
     return color
 }

@@ -219,9 +219,12 @@ extension MainViewController: RouteTrackerDelegate {
     }
 
     func didStop() {
-        mapView.overlays.forEach {
-            mapView.removeOverlay($0)
-        }
+		DispatchQueue.global().async {
+			self.mapView.overlays.forEach {
+				self.mapView.removeOverlay($0)
+			}
+		}
+        
         speedLabel.text = "0 " + speedMUStr
         distanceLabel.text = "0 " + distanceMUStr
         timeLabel.text = formatTime(seconds: 0)//"0" + secondsMUStr
