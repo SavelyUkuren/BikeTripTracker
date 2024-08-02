@@ -58,7 +58,6 @@ class MainViewController: UIViewController {
     @IBAction func stopButtonTapped(_ sender: Any) {
         showAlertIfStopButtonTapped { _ in
             self.routeTracker.stop()
-            self.playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         }
     }
     
@@ -90,12 +89,15 @@ class MainViewController: UIViewController {
             isLocationTracking = false
         }
         if gestureRecognizer.state == .ended {
-            mapView.updateFocusIfNeeded()
+			DispatchQueue.main.async {
+				self.mapView.updateFocusIfNeeded()
+			}
         }
     }
     
     private func setup() {
         routeTracker.delegate = self
+		mapView.userTrackingMode = .follow
         
         setupMapView()
         setupMenu()
@@ -137,7 +139,7 @@ class MainViewController: UIViewController {
     }
     
     private func showErrorMessage(msg: String) {
-        let alert = UIAlertController(title: "Error",
+		let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""),
                                       message: msg, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
@@ -228,6 +230,8 @@ extension MainViewController: RouteTrackerDelegate {
         speedLabel.text = "0 " + speedMUStr
         distanceLabel.text = "0 " + distanceMUStr
         timeLabel.text = formatTime(seconds: 0)//"0" + secondsMUStr
+		
+		playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
     }
 
 }

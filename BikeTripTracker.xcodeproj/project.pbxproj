@@ -578,7 +578,7 @@
 				DEVELOPMENT_TEAM = 8BPKDD8276;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BikeTripTracker/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Bike Trip Tracker";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bike Tracker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app needs access to your location to work!";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "The app needs access to your location to work";
@@ -616,7 +616,7 @@
 				DEVELOPMENT_TEAM = 8BPKDD8276;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BikeTripTracker/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Bike Trip Tracker";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bike Tracker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The app needs access to your location to work!";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "The app needs access to your location to work";

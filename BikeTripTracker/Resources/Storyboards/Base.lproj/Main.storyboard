@@ -609,7 +609,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-vP-NUm">
-                                                <rect key="frame" x="16" y="16" width="358" height="110"/>
+                                                <rect key="frame" x="16" y="61" width="358" height="110"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ljz-EP-Ea0">
                                                         <rect key="frame" x="0.0" y="0.0" width="171" height="110"/>
@@ -688,7 +688,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pGD-LD-uaE">
-                                                <rect key="frame" x="16" y="142" width="358" height="110"/>
+                                                <rect key="frame" x="16" y="187" width="358" height="110"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dH-lX-wzg">
                                                         <rect key="frame" x="0.0" y="0.0" width="171" height="110"/>
@@ -767,7 +767,7 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaD-AR-jvS">
-                                                <rect key="frame" x="31.999999999999996" y="561" width="48.666666666666657" height="28.666666666666629"/>
+                                                <rect key="frame" x="31.999999999999996" y="606" width="48.666666666666657" height="28.666666666666629"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -776,7 +776,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7c-mW-5C7">
-                                                <rect key="frame" x="16" y="605.66666666666663" width="358" height="300"/>
+                                                <rect key="frame" x="16" y="650.66666666666663" width="358" height="300"/>
                                                 <subviews>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="07W-t3-lql">
                                                         <rect key="frame" x="169" y="140" width="20" height="20"/>
@@ -795,7 +795,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Its-kX-EGl">
-                                                <rect key="frame" x="16" y="329" width="358" height="200"/>
+                                                <rect key="frame" x="16" y="374" width="358" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSv-oP-QKk">
                                                         <rect key="frame" x="146.66666666666666" y="90" width="64.666666666666657" height="20.333333333333329"/>
@@ -820,7 +820,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1z-F4-Sab">
-                                                <rect key="frame" x="32" y="284" width="136.33333333333334" height="29"/>
+                                                <rect key="frame" x="32" y="329" width="136.33333333333334" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="t19-bH-0gF"/>
                                                 </constraints>
@@ -831,17 +831,31 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizationKey" value="Speed chart"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsT-JC-twX">
+                                                <rect key="frame" x="32" y="16" width="108" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="29" id="TcC-eD-yNb"/>
+                                                    <constraint firstAttribute="height" constant="29" id="cTl-6a-6pH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationKey" value="Summary"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Its-kX-EGl" firstAttribute="top" secondItem="Q1z-F4-Sab" secondAttribute="bottom" constant="16" id="3Ba-Kw-zr5"/>
                                             <constraint firstItem="RaD-AR-jvS" firstAttribute="top" secondItem="Its-kX-EGl" secondAttribute="bottom" constant="32" id="44F-kI-K9H"/>
+                                            <constraint firstItem="rsT-JC-twX" firstAttribute="top" secondItem="yXl-10-yf0" secondAttribute="top" constant="16" id="8Kx-2h-IL1"/>
                                             <constraint firstItem="L7c-mW-5C7" firstAttribute="top" secondItem="RaD-AR-jvS" secondAttribute="bottom" constant="16" id="AZ2-7T-3vN"/>
                                             <constraint firstAttribute="trailing" secondItem="Its-kX-EGl" secondAttribute="trailing" constant="16" id="B2g-Li-fsH"/>
+                                            <constraint firstItem="ViU-vP-NUm" firstAttribute="top" secondItem="rsT-JC-twX" secondAttribute="bottom" constant="16" id="IeZ-A1-kLC"/>
                                             <constraint firstItem="Q1z-F4-Sab" firstAttribute="top" secondItem="pGD-LD-uaE" secondAttribute="bottom" constant="32" id="Mqw-Kh-vny"/>
                                             <constraint firstAttribute="trailing" secondItem="ViU-vP-NUm" secondAttribute="trailing" constant="16" id="OGB-9k-Ibp"/>
                                             <constraint firstAttribute="trailing" secondItem="L7c-mW-5C7" secondAttribute="trailing" constant="16" id="RSi-sz-LcW"/>
-                                            <constraint firstItem="ViU-vP-NUm" firstAttribute="top" secondItem="yXl-10-yf0" secondAttribute="top" constant="16" id="bcO-sN-XgI"/>
                                             <constraint firstAttribute="trailing" secondItem="pGD-LD-uaE" secondAttribute="trailing" constant="16" id="ds9-bK-j7b"/>
                                             <constraint firstItem="Q1z-F4-Sab" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="32" id="g7s-zN-VXs"/>
                                             <constraint firstItem="RaD-AR-jvS" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="32" id="jCQ-vI-qCg"/>
@@ -851,6 +865,7 @@
                                             <constraint firstItem="ViU-vP-NUm" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="msc-A1-7J3"/>
                                             <constraint firstItem="pGD-LD-uaE" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="pjY-lE-Ofi"/>
                                             <constraint firstItem="L7c-mW-5C7" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="16" id="woe-R0-4Po"/>
+                                            <constraint firstItem="rsT-JC-twX" firstAttribute="leading" secondItem="yXl-10-yf0" secondAttribute="leading" constant="32" id="zjz-TM-yMO"/>
                                         </constraints>
                                     </view>
                                 </subviews>

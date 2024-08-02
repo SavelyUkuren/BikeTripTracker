@@ -11,6 +11,10 @@ import MapKit
 
 class RouteTracker: NSObject {
 //    static var shared = RouteTracker()
+	
+	enum Errors: String {
+		case cantAccessToLocation = "Can't access to your location!"
+	}
     
     var speed: CLLocationSpeed {
         guard let speed = locationManager.location?.speed else { return 0 }
@@ -50,7 +54,7 @@ class RouteTracker: NSObject {
     func start() {
         
         guard let startCoordinate = locationManager.location?.coordinate else {
-            delegate?.errorOccured(msg: NSLocalizedString("Can't access to your location!", comment: ""))
+			delegate?.errorOccured(msg: NSLocalizedString(Errors.cantAccessToLocation.rawValue, comment: ""))
             return
         }
         
@@ -159,6 +163,15 @@ extension RouteTracker: CLLocationManagerDelegate {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         case .restricted, .denied:
+			delegate?.errorOccured(msg: NSLocalizedString(Errors.cantAccessToLocation.rawValue, comment: ""))
+			locationManager.stopUpdatingLocation()
+			state = .idle
+			locationManager.stopUpdatingLocation()
+			
+			timerIsRunning = false
+			timer?.invalidate()
+			timer = nil
+			delegate?.didStop()
             break
         case .authorizedAlways:
             locationManager.startUpdatingLocation()
