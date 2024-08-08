@@ -207,6 +207,13 @@ open class LineChart: UIView {
             
         }
         
+		let highlightLinePath = UIBezierPath()
+		highlightLinePath.move(to: highlightLineStart)
+		highlightLinePath.addLine(to: highlightLineEnd)
+		
+		highlightLinePath.lineWidth = 2
+		
+		highlightLinePath.stroke()
     }
     
     
@@ -228,7 +235,8 @@ open class LineChart: UIView {
         return result
     }
     
-    
+	var highlightLineStart: CGPoint = .zero
+	var highlightLineEnd: CGPoint = .zero
     
     /**
      * Handle touch events.
@@ -242,7 +250,16 @@ open class LineChart: UIView {
         let inverted = self.x.invert(xValue - x.axis.inset)
         let rounded = Int(round(Double(inverted)))
         let yValues: [CGFloat] = getYValuesForXValue(rounded)
+		
+		// My code
+		let pos = point.location(in: self)
+		if pos.x > x.axis.inset && pos.x < frame.width - x.axis.inset {
+			highlightLineStart = CGPoint(x: pos.x, y: y.axis.inset)
+			highlightLineEnd = CGPoint(x: highlightLineStart.x, y: frame.height - y.axis.inset)
+		}
+
         highlightDataPoints(rounded)
+		setNeedsDisplay()
         delegate?.didSelectDataPoint(CGFloat(rounded), yValues: yValues)
     }
     

@@ -86,6 +86,23 @@
         }
       }
     },
+    "Elevation graph" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elevation graph"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "График высот"
+          }
+        }
+      }
+    },
     "Error" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -292,13 +309,13 @@
         }
       }
     },
-    "Speed chart" : {
+    "Speed graph" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Speed chart"
+            "value" : "Speed graph"
           }
         },
         "ru" : {

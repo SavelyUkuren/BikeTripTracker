@@ -19,6 +19,7 @@ extension LocationEntity {
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
     @NSManaged public var speed: Double
+	@NSManaged public var altitude: Double
     @NSManaged public var index: Int64
     @NSManaged public var route: RouteEntity?
 

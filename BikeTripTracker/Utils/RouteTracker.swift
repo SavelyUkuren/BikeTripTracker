@@ -48,6 +48,7 @@ class RouteTracker: NSObject {
         
         locationManager.requestAlwaysAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true
+		locationManager.distanceFilter = 10
         
     }
     
@@ -147,7 +148,9 @@ extension RouteTracker: CLLocationManagerDelegate {
         
         if let newCoordinate = locations.first?.coordinate {
             let locModel = LocationModel(latitude: newCoordinate.latitude,
-                                         longtitude: newCoordinate.longitude, speed: speed)
+                                         longtitude: newCoordinate.longitude,
+										 speed: speed,
+										 altitude: locations.first?.altitude)
             if routeFilter(lastCoord: locations.last!.coordinate, newCoord: newCoordinate) {
                 self.locations.append(locModel)
             }

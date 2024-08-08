@@ -33,6 +33,7 @@ class CoreDataManager {
                 lEntity.longitude = location.longitude
                 lEntity.speed = location.speed ?? 0
                 lEntity.index = Int64(index)
+				lEntity.altitude = location.altitude ?? 0
                 
                 rEntity.addToLocations(lEntity)
             }

@@ -11,13 +11,15 @@ struct LocationModel {
     var latitude: Double
     var longitude: Double
     var speed: Double?
+	var altitude: Double?
     var index: Int?
     
-    init(latitude: Double, longtitude: Double, speed: Double? = nil, index: Int? = nil) {
+	init(latitude: Double, longtitude: Double, speed: Double? = nil, altitude: Double? = nil, index: Int? = nil) {
         self.latitude = latitude
         self.longitude = longtitude
         self.speed = speed
         self.index = index
+		self.altitude = altitude
         
     }
 }
